@@ -1,0 +1,67 @@
+{
+  "customSyntax": "postcss-scss",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "ignoreFiles": [
+    "public/**/*",
+    "node_modules/**/*"
+  ],
+  "rules": {
+    "string-quotes": "single",
+    "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "keyframes-name-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "scss/at-import-partial-extension": "always",
+    "order/properties-order": [
+      [
+        "x",
+        "y",
+        "position",
+        "z-index",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "display",
+        "flex-flow",
+        "flex-direction",
+        "flex-wrap",
+        "justify-content",
+        "align-items",
+        "height",
+        "max-height",
+        "min-height",
+        "width",
+        "max-width",
+        "min-width",
+        "color",
+        "background",
+        "background-color",
+        "padding",
+        "padding-top",
+        "padding-right",
+        "padding-bottom",
+        "padding-left",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "font",
+        "font-family",
+        "font-size",
+        "font-weight"
+      ],
+      {
+        "unspecified": "bottom"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+@import './fonts.scss';
+@import './variables.scss';
+
+:root {
+  --font-color: #fefefe;
+  --font-color-tint: #c5c5c5;
+  --font-color-dark: #000000e0;
+  --bg: rgb(90 90 90 / 30.1%);
+  --bg-transparent: #81818146;
+  --bg-tint: rgb(90 90 90 / 50.1%);
+  --bg-root: #2c2c2c;
+  --preloader-bg-color: #3a3e47;
+  --preloader-fg-color: #313544;
+  --primary-color: #1677ff;
+  --primary-color-tint: #3c89e8;
+  --red-color: #e74032;
+  --grey-color: #ccc;
+  --green-color: #87d068;
+  --gold-color: #ddbc00;
+  --white-opacity: rgb(255 255 225 / 30%);
+}
+
+#root {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+
+    /* ширина всей полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg)
+
+    /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / 80%);
+
+    /* цвет бегунка */
+    border-radius: 5px;
+
+    /* округлось бегунка */
+    // border: 3px solid orange;  /* отступ вокруг бегунка */
+  }
+}
+
+.ant-input-affix-wrapper { /* stylelint-disable */
+  input {
+    background: transparent;
+  }
+}
+
+.ant-drawer-title {
+  font-size: 1.2rem !important;
+}
+
+/* Убрать полосу прокрутки для всей страницы */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  color: var(--font-color);
+  background: var(--bg-root);
+}
+
+.app {
+  height: 100%;
+  width: 100vw;
+}
