@@ -1,0 +1,32 @@
+.nav {
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mantine-color-dark-8);
+  border-radius: 20px 20px 0 0;
+
+	-webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.navButton {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+
+	
+
+  &.active {
+    svg {
+      transition: color 0.4s ease;
+
+      color: var(--mantine-color-blue-5);
+    }
+  }
+}
