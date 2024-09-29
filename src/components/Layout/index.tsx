@@ -1,7 +1,6 @@
 // src/components/Layout.tsx
 import { FC, ReactNode } from 'react';
 import styles from './styles.module.scss';
-import { Box } from '@mantine/core';
 import Navigation from '../Navigation';
 
 interface LayoutProps {
