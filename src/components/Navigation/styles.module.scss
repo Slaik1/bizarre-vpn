@@ -1,11 +1,13 @@
 .nav {
+  position: fixed;
+  inset: auto 0 0 0;
   height: 60px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mantine-color-dark-8);
-  border-radius: 20px 20px 0 0;
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 10px 10px 0 0;
 
 	-webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -19,14 +21,15 @@
   justify-content: center;
   color: white;
   text-decoration: none;
-
-	
+  svg {
+    color: var(--tg-theme-hint-color);
+  }
 
   &.active {
     svg {
       transition: color 0.4s ease;
 
-      color: var(--mantine-color-blue-5);
+      color: var(--tg-theme-link-color);
     }
   }
 }

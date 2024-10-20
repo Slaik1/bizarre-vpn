@@ -1,12 +1,16 @@
-import { FC } from 'react';
+import { FC } from "react";
+import HelpText from "./HelpText/HelpText";
+import HelpAffix from "./HelpAffix/HelpAffix";
 
 
-const HelpPage: FC = ({}) => {
-	return (
-		<div>
-		 help
-		</div>
-	)
-}
+const HelpPage: FC = () => {
 
-export default HelpPage
+  return (
+    <>
+    <HelpAffix/>
+    <HelpText/>
+    </>
+  );
+};
+
+export default HelpPage;
