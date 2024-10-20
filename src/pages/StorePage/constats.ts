@@ -7,6 +7,8 @@ export const vpnSubscriptions = [
     price: "150 руб.",
     description: "Поддержка до 5 устройств"
   },
+
+  
   // {
   //   duration: "6 месяцев",
   //   limit: "Лимит 500 ГБ",
