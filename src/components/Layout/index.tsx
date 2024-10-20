@@ -1,30 +1,23 @@
-import { observer } from 'mobx-react-lite';
-import { FC, ReactNode, useEffect, useRef } from 'react';
-
-import layoutStore from '../../stores/LayoutStore';
+// src/components/Layout.tsx
+import { FC, ReactNode } from 'react';
+import styles from './styles.module.scss';
+import { Box } from '@mantine/core';
 import Navigation from '../Navigation';
 
-import styles from './styles.module.scss';
-
 interface LayoutProps {
-  children: ReactNode;
+	children: ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => {
-  const mainRef = useRef(null);
-
-  useEffect(() => {
-    layoutStore.setMainRef(mainRef);
-  }, []);
-
+const Layout: FC<LayoutProps> = ({children}) => {
   return (
-    <>
-      <main ref={mainRef} className={styles.section}>
-        {children}
+    <div className={styles.layout}>
+      <header className={styles.header}>Bizarre VPN</header>
+      <main className={styles.section}>
+				{children}
       </main>
-      <Navigation />
-    </>
+      <Navigation/>
+    </div>
   );
 };
 
-export default observer(Layout);
+export default Layout;
