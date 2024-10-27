@@ -12,12 +12,21 @@ import {
 } from '@mantine/core';
 import { FC } from 'react';
 
-import android1 from '../../../assets/images/helpPage/android1.jpg';
-import android2 from '../../../assets/images/helpPage/android2.jpg';
-import android3 from '../../../assets/images/helpPage/android3.jpg';
-import windows1 from '../../../assets/images/helpPage/windows1.png';
-import windows2 from '../../../assets/images/helpPage/windows2.png';
-import windows3 from '../../../assets/images/helpPage/windows3.png';
+
+import iphone1 from '../../../assets/images/helpPage/iphone1.webp';
+import iphone2 from '../../../assets/images/helpPage/iphone2.webp';
+import iphone3 from '../../../assets/images/helpPage/iphone3.webp';
+import iphone4 from '../../../assets/images/helpPage/iphone4.webp';
+import iphone5 from '../../../assets/images/helpPage/iphone5.webp';
+import iphone6 from '../../../assets/images/helpPage/iphone6.webp';
+import iphone7 from '../../../assets/images/helpPage/iphone7.webp';
+import android1 from '../../../assets/images/helpPage/android1.webp';
+import android2 from '../../../assets/images/helpPage/android2.webp';
+import android3 from '../../../assets/images/helpPage/android3.webp';
+import windows1 from '../../../assets/images/helpPage/windows1.webp';
+import windows2 from '../../../assets/images/helpPage/windows2.webp';
+import windows3 from '../../../assets/images/helpPage/windows3.webp';
+import windows4 from '../../../assets/images/helpPage/windows4.webp';
 
 import styles from './HelpText.module.scss';
 
@@ -85,18 +94,24 @@ const HelpText: FC = () => {
             . После чего скопировать конфиг и добавить его в приложение. Правый
             верхний укол нажать + после чего{' '}
             <em>
-              Добавить из буфер обмена → Разрешить вставку → Подключиться.
+              Добавить из буфера → Разрешить вставку → Подключиться.
             </em>
           </span>
           <br />
           Также у данного приложения существует большой перечень настроек для
-          выборочного применения VPN к приложениям, сайтам или регионам.
+          выборочного применения VPN к приложениям, сайтам или регионам в разделе <em>Службы.</em>
         </Text>
         <Accordion className={styles.accordion} title="Скриншоты v2RayTun">
           <Item value="screenshots">
             <Control>Скриншоты</Control>
             <Panel>
-              {/* <Image src={android1} alt="Скриншот1" mt="sm" /> */}
+              <Image src={iphone1} alt="Главный экран" mt="sm" />
+              <Image src={iphone2} alt="Добавить из буфера" mt="sm" />
+              <Image src={iphone3} alt="Разрешить вставку" mt="sm" />
+              <Image src={iphone4} alt="Подключено" mt="sm" />
+              <Image src={iphone5} alt="Службы1" mt="sm" />
+              <Image src={iphone6} alt="Службы2" mt="sm" />
+              <Image src={iphone7} alt="Службы3" mt="sm" />
             </Panel>
           </Item>
         </Accordion>
@@ -183,6 +198,7 @@ const HelpText: FC = () => {
               <Image src={windows1} alt="Новый профиль" mt="sm" />
               <Image src={windows2} alt="Буфер обмена" mt="sm" />
               <Image src={windows3} alt="Подключено" mt="sm" />
+              <Image src={windows4} alt="Изменение типа подключения" mt="sm" />
             </Panel>
           </Item>
         </Accordion>
