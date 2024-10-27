@@ -1,4 +1,4 @@
-import { Button, Card, Image, Text } from '@mantine/core';
+import { Button, Card, Text } from '@mantine/core';
 import { FC } from 'react';
 import styles from './styles.module.scss'
 

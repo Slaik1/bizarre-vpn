@@ -15,7 +15,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     colorScheme: tg?.colorScheme || 'dark',
     components: {
       Button: {
-        styles: (theme) => ({
+        styles: () => ({
           root: {
             color: '#fff',
             background: 'var(--tg-theme-button-color)',
@@ -23,14 +23,14 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         }),
       },
       Card: {
-        styles: (theme) => ({
+        styles: () => ({
           root: {
             background: 'var(--tg-theme-secondary-bg-color)',
           },
         }),
       },
       Text: {
-        styles: (theme) => ({
+        styles: () => ({
           root: {
             color: 'var(--tg-theme-text-color)',
           },
@@ -40,7 +40,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   };
 
   return (
-    <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+    <MantineProvider theme={theme}>
       {children}
     </MantineProvider>
   );

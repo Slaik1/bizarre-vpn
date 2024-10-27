@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import { Ref, RefObject } from 'react';
+import { RefObject } from 'react';
 
 class LayoutStore {
   mainRef:N<RefObject<HTMLElement>> = null;

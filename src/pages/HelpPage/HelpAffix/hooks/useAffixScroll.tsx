@@ -13,6 +13,8 @@ export const useAffixScroll = () => {
       setIsShow(scrollTop > 0);
     };
 
+    if(!layoutStore.mainRef) return
+
     const element = layoutStore.mainRef.current;
 
     if (element) {

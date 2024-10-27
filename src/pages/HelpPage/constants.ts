@@ -1,3 +1,0 @@
-const HELP_DATA = [
-	
-]
