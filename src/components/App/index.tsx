@@ -1,3 +1,4 @@
+import { Notifications } from '@mantine/notifications';
 import { FC, Suspense, lazy, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -25,6 +26,7 @@ const App: FC = () => {
 
   return (
     <ThemeProvider>
+      <Notifications />
       <BrowserRouter>
         <Layout>
           <Suspense fallback={<Preloader />}>
