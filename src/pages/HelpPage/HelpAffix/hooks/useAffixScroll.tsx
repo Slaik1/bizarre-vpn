@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import layoutStore from "../../../../stores/LayoutStore";
+import layoutStore from '../../../../stores/LayoutStore';
 
 export const useAffixScroll = () => {
-	const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +13,7 @@ export const useAffixScroll = () => {
       setIsShow(scrollTop > 0);
     };
 
-    if(!layoutStore.mainRef) return
+    if (!layoutStore.mainRef) return;
 
     const element = layoutStore.mainRef.current;
 
@@ -29,7 +29,7 @@ export const useAffixScroll = () => {
     };
   }, []);
 
-	const scrollTop = () => {
+  const scrollTop = () => {
     if (!layoutStore.mainRef?.current) return;
 
     layoutStore.mainRef.current.scrollTo({
@@ -39,5 +39,5 @@ export const useAffixScroll = () => {
     });
   };
 
-	return {isShow, scrollTop}
-}
+  return { isShow, scrollTop };
+};

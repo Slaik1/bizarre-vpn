@@ -1,14 +1,13 @@
 export const vpnSubscriptions = [
   {
-    duration: "1 месяц",
-    limit: "Без лимита",
-    maxSpeed: "до 300 Мбит/с",
-    countryFlag: "🇳🇱",
-    price: "150 руб.",
-    description: "Поддержка до 5 устройств"
+    duration: '1 месяц',
+    limit: 'Без лимита',
+    maxSpeed: 'до 300 Мбит/с',
+    countryFlag: '🇳🇱',
+    price: '150 руб.',
+    description: 'Поддержка до 5 устройств',
   },
 
-  
   // {
   //   duration: "6 месяцев",
   //   limit: "Лимит 500 ГБ",

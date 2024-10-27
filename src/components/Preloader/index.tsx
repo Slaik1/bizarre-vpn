@@ -2,6 +2,7 @@ import Lottie from 'lottie-react';
 import { FC, useEffect, useState } from 'react';
 
 import loading from '../../assets/lottie/loading1.json';
+
 import styles from './styles.module.scss';
 
 interface PreloaderProps {
@@ -19,7 +20,7 @@ const Preloader: FC<PreloaderProps> = ({ delay = 300 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
 
-	if(!show) return null
+  if (!show) return null;
 
   return (
     <div className={styles.preloader}>

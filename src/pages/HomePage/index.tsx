@@ -1,9 +1,9 @@
 import { Button, Card, Text } from '@mantine/core';
 import { FC } from 'react';
-import styles from './styles.module.scss'
+
+import styles from './styles.module.scss';
 
 const HomePage: FC = () => {
-
   // const onClose = () => {
   //   tg.close()
   // }
@@ -13,8 +13,8 @@ const HomePage: FC = () => {
       <div className={styles.empty}>
         <h1>У вас нет активных подписок</h1>
       </div>
-      <Card  padding="lg" radius="md" >
-				<Text>Оформить тестовую подписку ?</Text>
+      <Card padding="lg" radius="md">
+        <Text>Оформить тестовую подписку ?</Text>
         <Button mt={20}>Оформить</Button>
       </Card>
     </section>

@@ -1,22 +1,22 @@
 .home {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-	.empty {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		margin-bottom: 30px;
-	}
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 
-	.testSub {
-		padding: 20px;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		border-radius: 10px;
-		gap: 20px;
-		font-size: 14px;
-	}
+  .testSub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    gap: 20px;
+  }
 }

@@ -1,17 +1,17 @@
 import { FC, Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { useTelegram } from '../../hooks/useTelegram';
 import HomePage from '../../pages/HomePage';
 import StorePage from '../../pages/StorePage';
 import Layout from '../Layout';
 import Preloader from '../Preloader';
 import ThemeProvider from '../ThemeProvider';
-import { useTelegram } from '../../hooks/useTelegram';
 
 const HelpPage = lazy(() => import('../../pages/HelpPage'));
 
 const App: FC = () => {
-  const { appReady} = useTelegram();
+  const { appReady } = useTelegram();
 
   useEffect(() => {
     appReady();

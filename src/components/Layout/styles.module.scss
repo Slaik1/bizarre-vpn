@@ -1,8 +1,8 @@
 .section {
-  padding: 16px;
-  background-color: var(--tg-theme-bg-color);
-  box-sizing: border-box;
   height: calc(100dvh - 60px);
-  overflow-y: auto;
   width: 100%;
+  background-color: var(--tg-theme-bg-color);
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }

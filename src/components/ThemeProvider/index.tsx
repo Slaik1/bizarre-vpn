@@ -2,6 +2,7 @@ import '@mantine/core/styles.css';
 import '../../assets/styles/index.scss';
 import { MantineProvider } from '@mantine/core';
 import { FC, ReactNode } from 'react';
+
 import { useTelegram } from '../../hooks/useTelegram';
 
 interface ThemeProviderProps {
@@ -39,11 +40,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     },
   };
 
-  return (
-    <MantineProvider theme={theme}>
-      {children}
-    </MantineProvider>
-  );
+  return <MantineProvider theme={theme}>{children}</MantineProvider>;
 };
 
 export default ThemeProvider;

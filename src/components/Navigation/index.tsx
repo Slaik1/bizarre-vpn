@@ -1,11 +1,12 @@
 // Navigation.jsx
-import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './styles.module.scss';
-import { IoHomeOutline } from 'react-icons/io5';
-import { IoMdHelp } from 'react-icons/io';
-import { MdAttachMoney } from 'react-icons/md';
 import classNames from 'classnames';
+import { FC } from 'react';
+import { IoMdHelp } from 'react-icons/io';
+import { IoHomeOutline } from 'react-icons/io5';
+import { MdAttachMoney } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
+
+import styles from './styles.module.scss';
 
 const getNavLinkClass = (isActive: boolean) =>
   classNames(styles.navButton, { [styles.active]: isActive });
@@ -13,13 +14,23 @@ const getNavLinkClass = (isActive: boolean) =>
 const Navigation: FC = () => {
   return (
     <nav className={styles.nav}>
-      <NavLink to="/" className={({ isActive }) => getNavLinkClass(isActive)} end>
+      <NavLink
+        to="/"
+        className={({ isActive }) => getNavLinkClass(isActive)}
+        end
+      >
         <IoHomeOutline size={25} />
       </NavLink>
-      <NavLink to="/store" className={({ isActive }) => getNavLinkClass(isActive)}>
+      <NavLink
+        to="/store"
+        className={({ isActive }) => getNavLinkClass(isActive)}
+      >
         <MdAttachMoney size={25} />
       </NavLink>
-      <NavLink to="/help" className={({ isActive }) => getNavLinkClass(isActive)}>
+      <NavLink
+        to="/help"
+        className={({ isActive }) => getNavLinkClass(isActive)}
+      >
         <IoMdHelp size={25} />
       </NavLink>
     </nav>
