@@ -1,4 +1,3 @@
-// Navigation.jsx
 import classNames from 'classnames';
 import { FC } from 'react';
 import { IoMdHelp } from 'react-icons/io';

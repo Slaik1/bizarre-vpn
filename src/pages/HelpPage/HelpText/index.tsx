@@ -12,22 +12,15 @@ import {
 } from '@mantine/core';
 import { FC } from 'react';
 
-import android1 from '../../../assets/images/helpPage/android1.webp';
-import android2 from '../../../assets/images/helpPage/android2.webp';
-import android3 from '../../../assets/images/helpPage/android3.webp';
-import iphone1 from '../../../assets/images/helpPage/iphone1.webp';
-import iphone2 from '../../../assets/images/helpPage/iphone2.webp';
-import iphone3 from '../../../assets/images/helpPage/iphone3.webp';
-import iphone4 from '../../../assets/images/helpPage/iphone4.webp';
-import iphone5 from '../../../assets/images/helpPage/iphone5.webp';
-import iphone6 from '../../../assets/images/helpPage/iphone6.webp';
-import iphone7 from '../../../assets/images/helpPage/iphone7.webp';
-import windows1 from '../../../assets/images/helpPage/windows1.webp';
-import windows2 from '../../../assets/images/helpPage/windows2.webp';
-import windows3 from '../../../assets/images/helpPage/windows3.webp';
-import windows4 from '../../../assets/images/helpPage/windows4.webp';
+import {
+  iphoneImages,
+  androidImages,
+  windowsImages,
+} from '../../../constants/images';
 
-import styles from './HelpText.module.scss';
+import { NAV_LINKS } from './constants';
+
+import styles from './styles.module.scss';
 
 const { Item, Panel, Control } = Accordion;
 
@@ -41,10 +34,14 @@ const HelpText: FC = () => {
           className={styles.navLink}
         />
         <NavLink label="Использование" className={styles.navLink}>
-          <NavLink label="Iphone" href="#Iphone" className={styles.navLink} />
-          <NavLink label="Android" href="#Android" className={styles.navLink} />
-          <NavLink label="Windows" href="#Windows" className={styles.navLink} />
-          <NavLink label="Linux" href="#Linux" className={styles.navLink} />
+          {NAV_LINKS.map((el, i) => (
+            <NavLink
+              label={el}
+              href={`#${el}`}
+              className={styles.navLink}
+              key={i}
+            />
+          ))}
         </NavLink>
       </Group>
 
@@ -103,13 +100,9 @@ const HelpText: FC = () => {
           <Item value="screenshots">
             <Control>Скриншоты</Control>
             <Panel>
-              <Image src={iphone1} alt="Главный экран" mt="sm" />
-              <Image src={iphone2} alt="Добавить из буфера" mt="sm" />
-              <Image src={iphone3} alt="Разрешить вставку" mt="sm" />
-              <Image src={iphone4} alt="Подключено" mt="sm" />
-              <Image src={iphone5} alt="Службы1" mt="sm" />
-              <Image src={iphone6} alt="Службы2" mt="sm" />
-              <Image src={iphone7} alt="Службы3" mt="sm" />
+              {iphoneImages.map((el, i) => (
+                <Image src={el.image} alt={el.title} mt="sm" key={i} />
+              ))}
             </Panel>
           </Item>
         </Accordion>
@@ -133,9 +126,9 @@ const HelpText: FC = () => {
           <Item value="screenshots">
             <Control>Посмотреть скриншоты</Control>
             <Panel>
-              <Image src={android1} alt="Новый профиль" mt="sm" />
-              <Image src={android2} alt="Буфер обмена" mt="sm" />
-              <Image src={android3} alt="Подключено" mt="sm" />
+              {androidImages.map((el, i) => (
+                <Image src={el.image} alt={el.title} mt="sm" key={i} />
+              ))}
             </Panel>
           </Item>
         </Accordion>
@@ -193,10 +186,9 @@ const HelpText: FC = () => {
           <Item value="screenshots">
             <Control>Посмотреть скриншоты</Control>
             <Panel>
-              <Image src={windows1} alt="Новый профиль" mt="sm" />
-              <Image src={windows2} alt="Буфер обмена" mt="sm" />
-              <Image src={windows3} alt="Подключено" mt="sm" />
-              <Image src={windows4} alt="Изменение типа подключения" mt="sm" />
+              {windowsImages.map((el, i) => (
+                <Image src={el.image} alt={el.title} mt="sm" key={i} />
+              ))}
             </Panel>
           </Item>
         </Accordion>

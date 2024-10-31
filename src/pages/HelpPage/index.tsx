@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import HelpAffix from './HelpAffix/HelpAffix';
-import HelpText from './HelpText/HelpText';
+import HelpAffix from './HelpAffix';
+import HelpText from './HelpText';
 
 const HelpPage: FC = () => {
   return (
