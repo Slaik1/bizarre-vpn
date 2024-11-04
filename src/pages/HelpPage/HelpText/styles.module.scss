@@ -35,13 +35,10 @@
   }
 }
 
-.link {
+a {
   color: var(--tg-theme-link-color) !important;
   margin: 0 5px;
-}
-
-.textBlock {
-  margin-bottom: 10px;
+  text-decoration: none;
 }
 
 h1,

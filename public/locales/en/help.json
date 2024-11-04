@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "aboutProject": "About the Project",
+    "usage": "Usage",
+    "Iphone": "iPhone",
+    "Android": "Android",
+    "Windows": "Windows",
+    "Linux": "Linux"
+  },
+  "sections": {
+    "aboutProject": {
+      "title": "About the Project",
+      "description": "We do not track your traffic and do not collect any information 😉\n\nIf something goes wrong or you notice incorrect application behavior, contact <0>Slaik</0> or <1>Rayya</1>."
+    },
+    "usage": {
+      "title": "Usage",
+      "description": "Below are described methods of installation on various platforms."
+    },
+    "iphone": {
+      "title": "iPhone",
+      "description": "Download the <0>v2RayTun</0> Application. Then copy the config and add it to the application. Click the + in the top right corner, then <1>Add from clipboard → Allow paste → Connect.</1>",
+      "accordion": {
+        "screenshots": "View Screenshots"
+      }
+    },
+    "android": {
+      "title": "Android",
+      "description": "Download the <0>Hiddify</0> application (VPN is required for downloading). Then copy the config and add it to the application. <1>New profile → Add from clipboard → Connect</1>.",
+      "accordion": {
+        "screenshots": "View Screenshots"
+      }
+    },
+    "windows": {
+      "title": "Windows",
+      "description": "The <1>Hiddify</1> application needs to be run with administrator rights. Therefore, it is recommended to download it from the official <0>GitHub</0> page. You need to open the <1>Assets</1> section and download the appropriate version for you. In our case, it is <1>Hiddify-Windows-Setup-x64.exe</1>. It is also recommended to choose a release with the label <2>Latest</2>.\nOr download from the <3>Microsoft Store</3>.",
+      "settings": "Application Setup",
+      "settingsDescription": "If you downloaded the application from <0>GitHub</0>, you have the option to configure auto-start with administrator rights. To do this, right-click the shortcut and go to <1>Properties → Compatibility → Run as administrator → Apply</1>.\nAfter launching the application, add the config by copying it prematurely. <1>Click the + icon in the top right corner → Add from clipboard.</1> Then select the settings icon in the top right corner. In the appearing menu, change from <0>Proxy</0> to <0>VPN</0>. Now you can connect!",
+      "accordion": {
+        "screenshots": "View Screenshots"
+      }
+    },
+    "linux": {
+      "title": "Linux",
+      "description": "Similar to connecting on <0>Windows</0>, but instead of <0>.exe</0>, choose <0>Hiddify-Linux-x64.AppImage</0>."
+    }
+  },
+  "buttons": {
+    "aboutProject": "About the Project",
+    "usage": "Usage",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  }
+}
