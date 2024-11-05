@@ -1,34 +1,25 @@
+import { User } from '../../ts/types/user';
 import { http } from '../http';
 
 const ENDPOINT = 'user';
 
-interface AuthParams {
-  isBot: boolean;
-  languageCode: string;
-  telegramId: number;
-  username: string;
-}
+type AuthParams = Omit<User, 'id'>;
 
 export const user = {
   auth: async (params: AuthParams) => {
-    const { isBot, languageCode, telegramId, username } = params;
-
     const res = await http.post(ENDPOINT + '/auth', {
-      isBot,
-      languageCode,
-      telegramId,
-      username,
+      ...params,
     });
 
-    const data: AuthParams = res.data;
-    
-    return data
+    const data: User = res.data;
+
+    return data;
   },
   ping: async () => {
+    const res = await http.get(
+      'https://bizarre-vpn-api.duckdns.org:8443' + '/ping'
+    );
 
-    const res = await http.get(ENDPOINT + '/ping');
-
-    return res.data
+    return res.data;
   },
-
 };
