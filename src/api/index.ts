@@ -1,7 +1,7 @@
-import { user } from "./users/users";
+import { user } from './users/users';
 
 const api = {
-  user
+  user,
 };
 
 export default api;

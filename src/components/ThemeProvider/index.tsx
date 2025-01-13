@@ -1,10 +1,10 @@
 import '@mantine/core/styles.css';
 import '../../assets/styles/index.scss';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { FC, ReactNode } from 'react';
 
 import { useTelegram } from '../../hooks/useTelegram';
-import { Notifications } from '@mantine/notifications';
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -50,7 +50,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <MantineProvider theme={theme}>
-      <Notifications position="bottom-left"/>
+      <Notifications position="bottom-left" />
       {children}
     </MantineProvider>
   );

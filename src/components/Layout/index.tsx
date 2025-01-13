@@ -3,10 +3,10 @@ import { FC, ReactNode, useEffect, useRef } from 'react';
 
 import { useTelegram } from '../../hooks/useTelegram';
 import layoutStore from '../../stores/LayoutStore';
+import Auth from '../hoc/Auth';
 import Navigation from '../Navigation';
 
 import styles from './styles.module.scss';
-import Auth from '../hoc/Auth';
 
 interface LayoutProps {
   children: ReactNode;
