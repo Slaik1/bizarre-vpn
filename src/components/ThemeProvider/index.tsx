@@ -20,21 +20,21 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         styles: () => ({
           root: {
             color: '#fff',
-            background: 'var(--tg-theme-button-color)',
+            background: 'var(--primary-color)',
           },
         }),
       },
       Card: {
         styles: () => ({
           root: {
-            background: 'var(--tg-theme-secondary-bg-color)',
+            background: 'var(--bg-color)',
           },
         }),
       },
       Text: {
         styles: () => ({
           root: {
-            color: 'var(--tg-theme-text-color)',
+            color: 'var(--text-color)',
           },
         }),
       },

@@ -7,11 +7,11 @@ interface AuthProps {
 }
 
 const Auth: FC<AuthProps> = ({ children }) => {
-  const { isLoading, isUserExist } = useAuth();
+  const { isLoading } = useAuth();
 
   if (isLoading) return null;
 
-  if (!isUserExist) return <h1>Ошибка авторизации пользователя</h1>;
+  // if (!isUserExist) return <h1>Ошибка авторизации пользователя</h1>;
 
   return children;
 };

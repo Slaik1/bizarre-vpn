@@ -1,11 +1,11 @@
 .helpPage {
   .navLink {
     height: 30px;
-    color: var(--tg-theme-link-color);
-    background: var(--tg-theme-bg-color);
+    color: var(--link-color);
+    background: var(--bg-color);
 
     &:hover {
-      background: var(--tg-theme-bg-color);
+      background: var(--bg-color);
     }
   }
 
@@ -14,29 +14,29 @@
   }
 
   .accordion {
-    color: var(--tg-theme-text-color);
+    color: var(--text-color);
     margin-bottom: 10px;
 
     &:hover {
-      background: var(--tg-theme-bg-color);
+      background: var(--bg-color);
     }
 
     button {
-      background: var(--tg-theme-bg-color);
+      background: var(--bg-color);
     }
 
     span {
-      color: var(--tg-theme-text-color);
+      color: var(--text-color);
 
       &:hover {
-        background: var(--tg-theme-bg-color);
+        background: var(--bg-color);
       }
     }
   }
 }
 
 a {
-  color: var(--tg-theme-link-color) !important;
+  color: var(--link-color) !important;
   margin: 0 5px;
   text-decoration: none;
 }
