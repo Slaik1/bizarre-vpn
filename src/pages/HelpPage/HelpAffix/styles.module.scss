@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--tg-theme-secondary-bg-color);
+  background: var(--bg-color);
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
 
   .arrowIcon {
-    color: var(--tg-theme-link-color) !important;
+    color: var(--primary-color) !important;
   }
 }
