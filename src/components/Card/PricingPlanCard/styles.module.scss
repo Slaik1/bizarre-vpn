@@ -1,0 +1,39 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  .lineDataWrapper {
+		margin-bottom: 16px;
+		padding: 0 24px;
+    .line {
+      display: flex;
+      justify-content: space-between;
+
+      .text {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .divider {
+    margin-bottom: 16px;
+  }
+
+	.priceBlock {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		padding: 0 24px;
+
+		.price {
+			font-size: 20px;
+			font-weight: 800;
+		}
+
+		.timeDuration {
+			font-size: 12px;
+			color: var(--hint-color);
+		}
+	}
+}
