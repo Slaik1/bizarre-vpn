@@ -9,7 +9,8 @@ export const PLANS = [
     speedLimitGb: 10,
     speedLimitMbps: 100,
     deviceLimit: 3,
-    price: 29.99
+    price: 29.99,
+    config: '123123'
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ export const PLANS = [
     speedLimitGb: 20,
     speedLimitMbps: 200,
     deviceLimit: 5,
-    price: 49.99
+    price: 49.99,
+    config: '123123'
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ export const PLANS = [
     speedLimitGb: 50,
     speedLimitMbps: 500,
     deviceLimit: 10,
-    price: 79.99
+    price: 79.99,
+    config: '123123'
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ export const PLANS = [
     speedLimitGb: 30,
     speedLimitMbps: 300,
     deviceLimit: 8,
-    price: 59.99
+    price: 59.99,
+    config: '123123'
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ export const PLANS = [
     speedLimitGb: 100,
     speedLimitMbps: 1000,
     deviceLimit: 20,
-    price: 149.99
+    price: 149.99,
+    config: '123123'
   }
 ];

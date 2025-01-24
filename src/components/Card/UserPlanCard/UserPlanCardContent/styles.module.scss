@@ -1,0 +1,51 @@
+.wrapper {
+
+	.info {
+		padding: 0 24px;
+
+		.progress {
+			margin-bottom: 8px;
+		}
+	
+		.traffic {
+			display: flex;
+			justify-content: space-between;
+			font-size: 12px;
+			font-weight: 600;
+			margin-bottom: 8px;
+		}
+	}
+
+	.divider {
+		margin-bottom: 16px;
+	}
+
+	.priceBlock {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		.price {
+			font-size: 20px;
+			font-weight: 700;
+			opacity: 0.7;
+		}
+
+		.timeWrapper {
+			text-align: end;
+
+			.duration {
+				font-size: 12px;
+				color: var(--text-color);
+				opacity: 0.7;
+				font-weight: 600;
+			}
+
+			.expiry {
+				font-size: 12px;
+				color: var(--hint-color);
+			}
+		}
+	}
+}
