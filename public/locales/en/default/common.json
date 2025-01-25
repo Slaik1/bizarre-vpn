@@ -1,0 +1,10 @@
+{
+  "units": {
+    "bytes": "Bytes",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "petabytes": "PB"
+  }
+}

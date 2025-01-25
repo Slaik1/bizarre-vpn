@@ -1,0 +1,10 @@
+{
+	"units": {
+    "bytes": "Байт",
+    "kilobytes": "КБ",
+    "megabytes": "МБ",
+    "gigabytes": "ГБ",
+    "terabytes": "ТБ",
+    "petabytes": "ПБ"
+  }
+}
