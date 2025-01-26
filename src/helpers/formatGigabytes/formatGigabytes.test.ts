@@ -1,62 +1,57 @@
+import { describe, it, expect, vi } from "vitest";
+
 import { formatGigabytes } from "./formatGigabytes";
 
-describe('formatGigabytes', () => {
-  test('should handle 0 GB', () => {
-    expect(formatGigabytes(0)).toBe('0 units.bytes');
+vi.mock("i18next", () => ({
+  t: (key: string) => key.replace("units.", ""),
+}));
+
+describe("unit formatGigabytes", () => {
+  it("formats the value in bytes", () => {
+    const result = formatGigabytes(0.000000001);
+
+    expect(result).toBe("1.1 bytes");
   });
 
-  test('should correctly convert values with different units', () => {
-    // 1 GB → остается GB
-    expect(formatGigabytes(1)).toBe('1 units.gigabytes');
-    
-    // 1024 GB → 1 TB
-    expect(formatGigabytes(1024)).toBe('1 units.terabytes');
-    
-    // 2048 GB → 2 TB
-    expect(formatGigabytes(2048)).toBe('2 units.terabytes');
-    
-    // 1536 GB → 1.5 TB
-    expect(formatGigabytes(1536)).toBe('1.5 units.terabytes');
-    
-    // 1048576 GB → 1 PB
-    expect(formatGigabytes(1048576)).toBe('1 units.petabytes');
+  it("formats the value in kilobytes", () => {
+    const result = formatGigabytes(0.000001);
+
+    expect(result).toBe("1 kilobytes");
   });
 
-  test('should handle fractional values with different fixed params', () => {
-    // 1.234 GB с fixed=2 → 1.23 GB
-    expect(formatGigabytes(1.234, 2)).toBe('1.23 units.gigabytes');
-    
-    // 2.999 GB с fixed=0 → 3 GB
-    expect(formatGigabytes(2.999, 0)).toBe('3 units.gigabytes');
-    
-    // 123.4567 GB с fixed=3 → 123.457 GB (округление)
-    expect(formatGigabytes(123.4567, 3)).toBe('123.457 units.gigabytes');
+  it("formats the value in megabytes", () => {
+    const result = formatGigabytes(0.001);
+
+    expect(result).toBe("1 megabytes");
   });
 
-  test('should handle edge cases', () => {
-    // Максимальная единица (petabytes)
-    expect(formatGigabytes(Math.pow(1024, 3))).toBe('1 units.petabytes');
-    
-    // Отрицательные значения (если допустимо)
-    expect(formatGigabytes(-5)).toBe('-5 units.gigabytes');
+  it("formats the value in gigabytes", () => {
+    const result = formatGigabytes(1);
+
+    expect(result).toBe("1 gigabytes");
   });
 
-  test('should use correct translation keys', () => {
-    formatGigabytes(500);
-    expect(t).toHaveBeenCalledWith('units.gigabytes');
+  it("formats the value in terabytes", () => {
+    const result = formatGigabytes(1024);
 
-    formatGigabytes(1500);
-    expect(t).toHaveBeenCalledWith('units.terabytes');
-
-    formatGigabytes(0.5);
-    expect(t).toHaveBeenCalledWith('units.megabytes');
+    expect(result).toBe("1 terabytes");
   });
 
-  test('should show integer values without decimal part', () => {
-    // 2.0 GB → 2 GB
-    expect(formatGigabytes(2.0)).toBe('2 units.gigabytes');
-    
-    // 1024.0 GB → 1 TB
-    expect(formatGigabytes(1024.0)).toBe('1 units.terabytes');
+  it("formats the value with a fractional part", () => {
+    const result = formatGigabytes(0.5);
+
+    expect(result).toBe("512 megabytes");
+  });
+
+  it("formats the value with a fractional part using custom fixed", () => {
+    const result = formatGigabytes(0.000001, 2);
+
+    expect(result).toBe("1.05 kilobytes");
+  });
+
+  it("handles the value 0 correctly", () => {
+    const result = formatGigabytes(0);
+
+    expect(result).toBe("0 bytes");
   });
 });

@@ -7,6 +7,7 @@
     "start": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "test": "vitest",
     "lint": "npm run stylelint && npm run eslint && npm run prettier:check",
     "lint:fix": "npm run prettier:fix && npm run stylelint:fix && npm run eslint:fix",
     "eslint": "eslint --cache --ext .ts,.tsx,.ts,.tsx src/ --color",
@@ -41,14 +42,18 @@
     "sass": "^1.79.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/i18next": "^12.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.48.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-react": "^7.33.2",
+    "jsdom": "^26.0.0",
     "prettier": "^3.1.1",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.5",
@@ -58,6 +63,7 @@
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vitest": "^3.0.4"
   }
 }

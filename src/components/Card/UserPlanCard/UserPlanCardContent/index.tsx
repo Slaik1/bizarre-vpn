@@ -1,11 +1,11 @@
 import { Divider, Progress } from '@mantine/core';
+import classNames from 'classnames';
 import { FC } from 'react';
 
-import { getPercentage } from '../../../../helpers/getPercentage';
+import { getPercentage } from '../../../../helpers/getPercentage/getPercentage';
 import { UserPlan } from '../../../../ts/types/userPlan';
 
 import cl from './styles.module.scss';
-import classNames from 'classnames';
 
 interface UserPlanCardContentProps {
   data: UserPlan;
