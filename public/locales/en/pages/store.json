@@ -1,0 +1,20 @@
+{
+	"pricingPlanCard": {
+		"actionButton": "Subscribe",
+		"info": {
+			"limit": "Limit"
+		},
+		"speed": {
+			"title": "Speed",
+			"value": "up to {{speed}} MB/s"
+		},
+		"device": {
+			"title": "Devices",
+			"value": "up to {{deviceLimit}} units"
+		},
+		"country": {
+			"title": "Country"
+		},
+		"duration": "for {{durationMonth}} days"
+	}
+}

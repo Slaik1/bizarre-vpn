@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core';
 import { FC, MouseEvent, ReactNode } from 'react';
 
-import cl from './styles.module.scss';
+import cl from './CardContainer.module.scss';
 
 interface CardContainerProps {
   title: string;

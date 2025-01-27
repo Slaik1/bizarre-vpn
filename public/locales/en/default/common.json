@@ -6,5 +6,6 @@
     "gigabytes": "GB",
     "terabytes": "TB",
     "petabytes": "PB"
-  }
+  },
+  "currency": "₽"
 }

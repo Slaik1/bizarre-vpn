@@ -4,7 +4,7 @@ import UserPlanCard from '../../../components/Card/UserPlanCard';
 
 import { useFetchUserPlans } from './hooks/useFetchUserPlans';
 
-import cl from './styles.module.scss'
+import cl from './UserPlans.module.scss'
 
 const UserPlans: FC = () => {
 	const { userPlans, isLoading } = useFetchUserPlans();

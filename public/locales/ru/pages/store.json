@@ -1,0 +1,20 @@
+{
+	"pricingPlanCard": {
+		"actionButton": "Оформить подписку ",
+		"info": {
+			"limit": "Лимит"
+		},
+		"speed": {
+			"title": "Скорость",
+			"value": "до {{speed}} МБ/С"
+		},
+		"device": {
+			"title": "Устройства",
+			"value":"до {{deviceLimit}} штук"
+		},
+		"country": {
+			"title": "Страна"
+		},
+		"duration": "за {{durationMonth}} дней"
+	}
+}

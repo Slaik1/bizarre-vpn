@@ -3,7 +3,7 @@ import { FaArrowUpLong } from 'react-icons/fa6';
 
 import { useAffixScroll } from './hooks/useAffixScroll';
 
-import styles from './styles.module.scss';
+import styles from './HelpAffix.module.scss';
 
 const HelpAffix = () => {
   const { isShow, scrollTop } = useAffixScroll();

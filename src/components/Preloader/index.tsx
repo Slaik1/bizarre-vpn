@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from 'react';
 
 import loading from '../../assets/lottie/loading1.json';
 
-import styles from './styles.module.scss';
+import styles from './Preloader.module.scss';
 
 interface PreloaderProps {
   delay?: number;

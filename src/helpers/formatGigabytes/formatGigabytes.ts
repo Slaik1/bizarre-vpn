@@ -9,7 +9,7 @@ const UNITS = [
   'petabytes',
 ];
 
-export const formatGigabytes = (gigabytes: number, fixed = 1): string => {
+export const formatGigabytes = (gigabytes: number , fixed = 1): string => {
   let value = gigabytes * 1024 * 1024 * 1024;
   let unitIndex = 0;
 

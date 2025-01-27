@@ -1,28 +1,35 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { UserPlan } from '../../../ts/types/userPlan';
-import CardContainer from '../common/CardContainer';
 import notify from '../../../utils/notify';
+import CardContainer from '../common/CardContainer';
+
 import UserPlanCardContent from './UserPlanCardContent';
 
 interface UserPlanCardProps {
-	plan: UserPlan
+  plan: UserPlan;
 }
 
-const UserPlanCard: FC<UserPlanCardProps> = ({plan}) => {
-	const {name, config} = plan
+const UserPlanCard: FC<UserPlanCardProps> = ({ plan }) => {
+  const { t } = useTranslation('home');
+  const { name, config } = plan;
 
-	const buttonClickHandler = async () => {
-		await navigator.clipboard.writeText(config);
+  const buttonClickHandler = async () => {
+    await navigator.clipboard.writeText(config);
 
-		notify.success('Конфиг скопирован в буфер обмена')
-	}
+    notify.success(t('general.copy.info'));
+  };
 
-	return (
-		<CardContainer title={name} buttonHandler={buttonClickHandler} buttonTitle='Скопировать' >
-			<UserPlanCardContent data={plan}/>
-		</CardContainer>
-	)
-}
+  return (
+    <CardContainer
+      title={name}
+      buttonHandler={buttonClickHandler}
+      buttonTitle={t('userPlanCard.actionButton')}
+    >
+      <UserPlanCardContent data={plan} />
+    </CardContainer>
+  );
+};
 
-export default UserPlanCard
+export default UserPlanCard;

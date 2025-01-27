@@ -4,7 +4,7 @@ import PricingPlanCard from '../../../components/Card/PricingPlanCard';
 
 import { useFetchPricingPlans } from './hooks/useFetchPricingPlans.ts';
 
-import cl from './styles.module.scss';
+import cl from './PricingPlans.module.scss';
 
 const PricingPlans: FC = () => {
   const { isLoading, pricingPlans } = useFetchPricingPlans();

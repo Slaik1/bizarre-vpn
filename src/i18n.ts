@@ -9,18 +9,18 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: FALLBACK_LANGUAGE,
-    ns: ['common', 'errors'],
+    ns: ['common', 'errors', 'store', 'home'],
     defaultNS: ['common', 'notify'],
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      loadPath: (lngs: string[], namespaces : string) => {
-        const ns = namespaces[0]
+      loadPath: (lngs: string[], namespaces: string) => {
+        const ns = namespaces[0];
         const lng = lngs[0];
 
-        if (ns === 'help') {
-          return `/locales/${lng}/pages/help.json`;
+        if (ns === 'help' || ns === 'store' || ns === 'home') {
+          return `/locales/${lng}/pages/${ns}.json`;
         }
 
         return `/locales/${lng}/default/${ns}.json`;
@@ -29,7 +29,7 @@ i18n
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
-    }
+    },
   });
 
 export default i18n;
