@@ -21,6 +21,7 @@ const App: FC = () => {
 
     i18n.changeLanguage(userLanguage);
     appReady();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

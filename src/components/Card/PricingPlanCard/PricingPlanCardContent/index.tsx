@@ -19,6 +19,7 @@ const PricingPlanContent: FC<PricingPlanContentProps> = ({ data }) => {
 
   const infoData = useMemo(
     () => getInfoDataArr(data, storeTranslation),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [data]
   );
 

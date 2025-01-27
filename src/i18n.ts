@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 
 import { FALLBACK_LANGUAGE } from './constants/user';
 
+// eslint-disable-next-line import/no-named-as-default-member
 i18n
   .use(Backend)
   .use(initReactI18next)

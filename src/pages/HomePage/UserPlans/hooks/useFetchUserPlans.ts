@@ -22,6 +22,7 @@ export const useFetchUserPlans = () => {
 
   useEffect(() => {
     fetchPlans();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { userPlans, isLoading };

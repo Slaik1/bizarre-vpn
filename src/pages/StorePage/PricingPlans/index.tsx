@@ -7,7 +7,7 @@ import { useFetchPricingPlans } from './hooks/useFetchPricingPlans.ts';
 import cl from './PricingPlans.module.scss';
 
 const PricingPlans: FC = () => {
-  const { isLoading, pricingPlans } = useFetchPricingPlans();
+  const { pricingPlans } = useFetchPricingPlans();
 
   return (
     <div className={cl.wrapper}>
