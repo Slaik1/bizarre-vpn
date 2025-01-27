@@ -7,7 +7,7 @@ export const MOCK_USER_PLANS = [
     gbFrom: 5.6,
     gbTo: 128,
     name: 'Basic',
-		id: 1
+    id: 1,
   },
   {
     duration: 60,
@@ -17,7 +17,7 @@ export const MOCK_USER_PLANS = [
     gbFrom: 50,
     gbTo: 512,
     name: 'Pro',
-		id: 2
+    id: 2,
   },
   {
     duration: 90,
@@ -27,7 +27,7 @@ export const MOCK_USER_PLANS = [
     gbFrom: 100,
     gbTo: 1024,
     name: 'Premium',
-		id: 3
+    id: 3,
   },
   {
     duration: 14,
@@ -37,7 +37,7 @@ export const MOCK_USER_PLANS = [
     gbFrom: 1,
     gbTo: 64,
     name: 'Starter',
-		id: 4
+    id: 4,
   },
   {
     duration: 365,
@@ -47,7 +47,7 @@ export const MOCK_USER_PLANS = [
     gbFrom: 200,
     gbTo: 2048,
     name: 'Enterprise',
-		id: 5
+    id: 5,
   },
   {
     duration: 30,
@@ -57,6 +57,6 @@ export const MOCK_USER_PLANS = [
     gbFrom: 10,
     gbTo: 256,
     name: 'Student',
-		id: 6
-  }
+    id: 6,
+  },
 ];

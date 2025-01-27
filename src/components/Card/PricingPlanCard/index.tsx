@@ -23,7 +23,7 @@ const PricingPlanCard: FC<PricingPlanProps> = ({ plan }) => {
       buttonTitle={
         <>
           {t('pricingPlanCard.actionButton')}
-          <IoWalletOutline size={18}/>
+          <IoWalletOutline size={18} />
         </>
       }
     >

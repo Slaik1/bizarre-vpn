@@ -16,13 +16,13 @@ interface UserPlanCardContentProps {
 
 const UserPlanCardContent: FC<UserPlanCardContentProps> = ({ data }) => {
   const { gbTo, gbFrom, price, expiryDate, duration } = data;
-  const {t: homeTranslation} = useTranslation('home')
+  const { t: homeTranslation } = useTranslation('home');
 
   const getTotalGigabytes = () => {
-    if(typeof gbTo === 'string') return gbTo
+    if (typeof gbTo === 'string') return gbTo;
 
-    return formatGigabytes(gbTo)
-  }
+    return formatGigabytes(gbTo);
+  };
 
   return (
     <div className={cl.wrapper}>
@@ -35,10 +35,16 @@ const UserPlanCardContent: FC<UserPlanCardContentProps> = ({ data }) => {
       </div>
       <Divider className={cl.divider} />
       <div className={classNames([cl.info, cl.priceBlock])}>
-        <p className={cl.price}>{price} {t('currency')}</p>
+        <p className={cl.price}>
+          {price} {t('currency')}
+        </p>
         <div className={cl.timeWrapper}>
-          <p className={cl.duration}>{homeTranslation('userPlanCard.duration', {duration})}</p>
-          <p className={cl.expiry}>{homeTranslation('userPlanCard.expiry', {expiryDate})}</p>
+          <p className={cl.duration}>
+            {homeTranslation('userPlanCard.duration', { duration })}
+          </p>
+          <p className={cl.expiry}>
+            {homeTranslation('userPlanCard.expiry', { expiryDate })}
+          </p>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 .content {
   display: flex;
   flex-direction: column;
+
   .pricingPlanInfo {
-    margin-bottom: 16px;
     padding: 0 24px;
+    margin-bottom: 16px;
+
     .line {
       display: flex;
       justify-content: space-between;
@@ -23,19 +25,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
     padding: 0 24px;
+    margin-bottom: 20px;
 
     .price {
       font-size: 20px;
       font-weight: 700;
-      opacity: 0.7;
+      opacity: 70%;
     }
 
     .timeDuration {
-      font-size: 12px;
       color: var(--text-color);
-      opacity: 0.7;
+      font-size: 12px;
+      opacity: 70%;
     }
   }
 }

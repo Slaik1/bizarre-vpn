@@ -51,7 +51,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <MantineProvider theme={theme}>
-      <Notifications position='top-center'/>
+      <Notifications position="top-center" />
       {children}
     </MantineProvider>
   );

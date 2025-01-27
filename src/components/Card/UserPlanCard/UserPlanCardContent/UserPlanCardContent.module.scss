@@ -1,51 +1,50 @@
 .wrapper {
+  .info {
+    padding: 0 24px;
 
-	.info {
-		padding: 0 24px;
+    .progress {
+      margin-bottom: 8px;
+    }
 
-		.progress {
-			margin-bottom: 8px;
-		}
-	
-		.traffic {
-			display: flex;
-			justify-content: space-between;
-			font-size: 12px;
-			font-weight: 600;
-			margin-bottom: 8px;
-		}
-	}
+    .traffic {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 
-	.divider {
-		margin-bottom: 16px;
-	}
+  .divider {
+    margin-bottom: 16px;
+  }
 
-	.priceBlock {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 20px;
+  .priceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 
-		.price {
-			font-size: 20px;
-			font-weight: 700;
-			opacity: 0.7;
-		}
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      opacity: 70%;
+    }
 
-		.timeWrapper {
-			text-align: end;
+    .timeWrapper {
+      text-align: end;
 
-			.duration {
-				font-size: 12px;
-				color: var(--text-color);
-				opacity: 0.7;
-				font-weight: 600;
-			}
+      .duration {
+        color: var(--text-color);
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 70%;
+      }
 
-			.expiry {
-				font-size: 12px;
-				color: var(--hint-color);
-			}
-		}
-	}
+      .expiry {
+        color: var(--hint-color);
+        font-size: 12px;
+      }
+    }
+  }
 }

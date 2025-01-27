@@ -17,7 +17,10 @@ const PricingPlanContent: FC<PricingPlanContentProps> = ({ data }) => {
   const { t: storeTranslation } = useTranslation('store');
   const { durationMonth, price } = data;
 
-  const infoData = useMemo(() => getInfoDataArr(data, storeTranslation), [data]);
+  const infoData = useMemo(
+    () => getInfoDataArr(data, storeTranslation),
+    [data]
+  );
 
   return (
     <div className={cl.content}>

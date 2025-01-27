@@ -9,4 +9,4 @@ export type PricingPlan = {
   speedLimitMbps: number;
   deviceLimit: number;
   price: number;
-}
+};
