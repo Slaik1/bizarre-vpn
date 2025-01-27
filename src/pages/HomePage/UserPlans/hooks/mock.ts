@@ -5,7 +5,7 @@ export const MOCK_USER_PLANS = [
     price: 550,
     country: 'Нидерланды',
     gbFrom: 5.6,
-    gbTo: 128,
+    gbTo: null,
     name: 'Basic',
     id: 1,
   },

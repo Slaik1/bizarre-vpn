@@ -13,11 +13,15 @@ import ThemeProvider from '../ThemeProvider';
 const HelpPage = lazy(() => import('../../pages/HelpPage'));
 
 const App: FC = () => {
-  const { appReady, user } = useTelegram();
+  const { appReady, user, tg } = useTelegram();
   const { i18n } = useTranslation();
 
   useEffect(() => {
     const userLanguage = user?.language_code || FALLBACK_LANGUAGE;
+
+    tg.requestFullscreen()
+
+    // tg.showScanQrPopup('hello')
 
     i18n.changeLanguage(userLanguage);
     appReady();

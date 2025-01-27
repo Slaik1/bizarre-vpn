@@ -1,37 +1,28 @@
 import classNames from 'classnames';
-import { FC } from 'react';
-import { IoMdHelp } from 'react-icons/io';
-import { IoHomeOutline } from 'react-icons/io5';
-import { MdAttachMoney } from 'react-icons/md';
+import { FC, useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import styles from './Navigation.module.scss';
+import { getNavLinks } from './helpers';
 
-const getNavLinkClass = (isActive: boolean) =>
-  classNames(styles.navButton, { [styles.active]: isActive });
+import cl from './Navigation.module.scss';
 
 const Navigation: FC = () => {
+  const links = useMemo(() => getNavLinks(), []);
+
   return (
-    <nav className={styles.nav}>
-      <NavLink
-        to="/"
-        className={({ isActive }) => getNavLinkClass(isActive)}
-        end
-      >
-        <IoHomeOutline size={25} />
-      </NavLink>
-      <NavLink
-        to="/store"
-        className={({ isActive }) => getNavLinkClass(isActive)}
-      >
-        <MdAttachMoney size={25} />
-      </NavLink>
-      <NavLink
-        to="/help"
-        className={({ isActive }) => getNavLinkClass(isActive)}
-      >
-        <IoMdHelp size={25} />
-      </NavLink>
+    <nav className={cl.nav}>
+      {links.map(({ icon: Icon, route, title }) => (
+        <NavLink
+          to={route}
+          key={route}
+          className={({ isActive }) =>
+            classNames(cl.navButton, { [cl.active]: isActive })
+          }
+        >
+          <Icon className={cl.icon}/>
+          <p className={cl.title}>{title}</p>
+        </NavLink>
+      ))}
     </nav>
   );
 };
