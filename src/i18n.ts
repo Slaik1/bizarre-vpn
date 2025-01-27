@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: FALLBACK_LANGUAGE,
-    ns: ['common', 'errors', 'help'],
+    ns: ['common', 'errors'],
     defaultNS: ['common', 'notify'],
     interpolation: {
       escapeValue: false,
@@ -19,7 +19,7 @@ i18n
         const ns = namespaces[0]
         const lng = lngs[0];
 
-        if (namespaces === 'help') {
+        if (ns === 'help') {
           return `/locales/${lng}/pages/help.json`;
         }
 

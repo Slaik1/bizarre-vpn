@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { NotificationProps } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { t } from 'i18next';

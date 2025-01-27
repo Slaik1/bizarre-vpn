@@ -6,7 +6,7 @@ import layoutStore from '../../stores/LayoutStore';
 import Auth from '../hoc/Auth';
 import Navigation from '../Navigation';
 
-import styles from './styles.module.scss';
+import styles from './Layout.module.scss';
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,10 +22,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <Auth>
-      <main ref={mainRef} className={styles.section}>
-        {children}
-      </main>
-      <Navigation />
+      <div style={{ height: '100dvh', width: '100dvw' }}>
+        <main ref={mainRef} className={styles.section}>
+          {children}
+        </main>
+        <Navigation />
+      </div>
     </Auth>
   );
 };
