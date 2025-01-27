@@ -1,18 +1,35 @@
 import i18n from 'i18next';
-import HttpBackend from 'i18next-http-backend';
+import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+import { FALLBACK_LANGUAGE } from './constants/user';
+
+// eslint-disable-next-line import/no-named-as-default-member
 i18n
-  .use(HttpBackend)
+  .use(Backend)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
-    ns: ['common'],
+    fallbackLng: FALLBACK_LANGUAGE,
+    ns: ['common', 'errors', 'store', 'home'],
+    defaultNS: ['common', 'notify'],
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: (lngs: string[], namespaces: string) => {
+        const ns = namespaces[0];
+        const lng = lngs[0];
+
+        if (ns === 'help' || ns === 'store' || ns === 'home') {
+          return `/locales/${lng}/pages/${ns}.json`;
+        }
+
+        return `/locales/${lng}/default/${ns}.json`;
+      },
+    },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
   });
 

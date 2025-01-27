@@ -1,0 +1,7 @@
+{
+	"userPlanCard": {
+		"actionButton": "Copy",
+		"duration": "For {{duration}} days",
+		"expiry": "Paid until {{expiryDate}}"
+	}
+}

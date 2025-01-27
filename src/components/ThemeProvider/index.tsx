@@ -1,5 +1,6 @@
 import '@mantine/core/styles.css';
 import '../../assets/styles/index.scss';
+import '@mantine/notifications/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { FC, ReactNode } from 'react';
@@ -38,19 +39,19 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
           },
         }),
       },
-      Notification: {
-        styles: () => ({
-          root: {
-            maxWidth: 400,
-          },
-        }),
-      },
+      // Notification: {
+      //   styles: () => ({
+      //     root: {
+      //       maxWidth: 400,
+      //     },
+      //   }),
+      // },
     },
   };
 
   return (
     <MantineProvider theme={theme}>
-      <Notifications position="bottom-left" />
+      <Notifications position="top-center" />
       {children}
     </MantineProvider>
   );

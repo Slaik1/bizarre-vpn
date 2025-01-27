@@ -1,0 +1,13 @@
+{
+  "general": {
+    "status": {
+      "error": "Error",
+      "success": "Success",
+      "info": "Information",
+      "warning": "Warning"
+    },
+    "copy": {
+      "info": "Copied to clipboard"
+    }
+  }
+}

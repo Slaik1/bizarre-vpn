@@ -1,0 +1,21 @@
+import { FC } from 'react';
+
+import PricingPlanCard from '../../../components/Card/PricingPlanCard';
+
+import { useFetchPricingPlans } from './hooks/useFetchPricingPlans.ts';
+
+import cl from './PricingPlans.module.scss';
+
+const PricingPlans: FC = () => {
+  const { pricingPlans } = useFetchPricingPlans();
+
+  return (
+    <div className={cl.wrapper}>
+      {pricingPlans.map((el) => (
+        <PricingPlanCard plan={el} key={el.id} />
+      ))}
+    </div>
+  );
+};
+
+export default PricingPlans;

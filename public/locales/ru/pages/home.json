@@ -1,0 +1,7 @@
+{
+	"userPlanCard": {
+		"actionButton": "Скопировать",
+		"duration": "За {{duration}} дней",
+		"expiry": "Оплачен до {{expiryDate}}"
+	}
+}

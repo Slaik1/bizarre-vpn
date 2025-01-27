@@ -5,7 +5,7 @@ import { IoHomeOutline } from 'react-icons/io5';
 import { MdAttachMoney } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 
-import styles from './styles.module.scss';
+import styles from './Navigation.module.scss';
 
 const getNavLinkClass = (isActive: boolean) =>
   classNames(styles.navButton, { [styles.active]: isActive });

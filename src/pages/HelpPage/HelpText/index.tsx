@@ -21,7 +21,7 @@ import {
 
 import { NAV_LINKS } from './constants';
 
-import styles from './styles.module.scss';
+import styles from './HelpText.module.scss';
 
 const { Item, Panel, Control } = Accordion;
 
