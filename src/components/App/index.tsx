@@ -16,8 +16,8 @@ const App: FC = () => {
 
   useEffect(() => {
     i18n.changeLanguage(rootStore.telegramStore.getUserLanguage());
-    rootStore.telegramStore.setAppReady()
-    rootStore.telegramStore.setAppFullScreen()
+    rootStore.telegramStore.setAppReady();
+    rootStore.telegramStore.setAppFullScreen();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

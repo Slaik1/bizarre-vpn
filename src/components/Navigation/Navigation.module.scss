@@ -12,9 +12,9 @@
 
 .navButton {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100%;
   width: 100%;
   color: var(--font-color);
@@ -26,8 +26,8 @@
   }
 
   .title {
+    color: var(--hint-color);
     font-weight: 600;
-    color:  var(--hint-color);
   }
 
   &.active {

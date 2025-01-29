@@ -1,6 +1,6 @@
-import { LayoutStore } from "./LayoutStore";
-import { TelegramStore } from "./TelegramStore";
-import { UserStore } from "./UserStore";
+import { LayoutStore } from './LayoutStore';
+import { TelegramStore } from './TelegramStore';
+import { UserStore } from './UserStore';
 
 export class RootStore {
   public telegramStore: TelegramStore;

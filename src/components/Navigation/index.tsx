@@ -19,7 +19,7 @@ const Navigation: FC = () => {
             classNames(cl.navButton, { [cl.active]: isActive })
           }
         >
-          <Icon className={cl.icon}/>
+          <Icon className={cl.icon} />
           <p className={cl.title}>{title}</p>
         </NavLink>
       ))}

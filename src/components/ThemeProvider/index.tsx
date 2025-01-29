@@ -12,7 +12,6 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-
   const theme = {
     colorScheme: rootStore.telegramStore.tg?.colorScheme || 'dark',
     components: {

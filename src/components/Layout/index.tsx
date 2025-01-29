@@ -16,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
   useEffect(() => {
     rootStore.layoutStore.setMainRef(mainRef);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rootStore.telegramStore.user]);
 
   return (
