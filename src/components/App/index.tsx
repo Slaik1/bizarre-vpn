@@ -2,10 +2,9 @@ import { FC, Suspense, lazy, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { FALLBACK_LANGUAGE } from '../../constants/user';
-import { useTelegram } from '../../hooks/useTelegram';
 import HomePage from '../../pages/HomePage';
 import StorePage from '../../pages/StorePage';
+import { rootStore } from '../../stores/RootStore';
 import Layout from '../Layout';
 import Preloader from '../Preloader';
 import ThemeProvider from '../ThemeProvider';
@@ -13,14 +12,12 @@ import ThemeProvider from '../ThemeProvider';
 const HelpPage = lazy(() => import('../../pages/HelpPage'));
 
 const App: FC = () => {
-  const { appReady, user } = useTelegram();
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const userLanguage = user?.language_code || FALLBACK_LANGUAGE;
-
-    i18n.changeLanguage(userLanguage);
-    appReady();
+    i18n.changeLanguage(rootStore.telegramStore.getUserLanguage());
+    rootStore.telegramStore.setAppReady();
+    rootStore.telegramStore.setAppFullScreen();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

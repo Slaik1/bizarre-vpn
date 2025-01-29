@@ -1,8 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { FC, ReactNode, useEffect, useRef } from 'react';
 
-import { useTelegram } from '../../hooks/useTelegram';
-import layoutStore from '../../stores/LayoutStore';
+import { rootStore } from '../../stores/RootStore';
 import Auth from '../hoc/Auth';
 import Navigation from '../Navigation';
 
@@ -14,11 +13,11 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   const mainRef = useRef(null);
-  const { user } = useTelegram();
 
   useEffect(() => {
-    layoutStore.setMainRef(mainRef);
-  }, [user]);
+    rootStore.layoutStore.setMainRef(mainRef);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rootStore.telegramStore.user]);
 
   return (
     <Auth>

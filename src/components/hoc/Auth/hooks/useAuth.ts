@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import api from '../../../../api';
 import tryCatchWrapper from '../../../../helpers/tryCatchWrapper';
-import userStore from '../../../../stores/UserStore';
+import { rootStore } from '../../../../stores/RootStore';
 
 export const useAuth = () => {
   const [isUserExist, setIsUserExist] = useState(false);
@@ -13,7 +13,7 @@ export const useAuth = () => {
       async () => {
         const data = await api.user.auth();
 
-        userStore.setUser(data);
+        rootStore.userStore.setUser(data);
 
         setIsUserExist(true);
       },

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { formatGigabytes } from '../../../../helpers/formatGigabytes/formatGigabytes';
 import { getPercentage } from '../../../../helpers/getPercentage/getPercentage';
+import { isNull } from '../../../../helpers/isNull';
 import { UserPlan } from '../../../../ts/types/userPlan';
 
 import cl from './UserPlanCardContent.module.scss';
@@ -19,15 +20,21 @@ const UserPlanCardContent: FC<UserPlanCardContentProps> = ({ data }) => {
   const { t: homeTranslation } = useTranslation('home');
 
   const getTotalGigabytes = () => {
-    if (typeof gbTo === 'string') return gbTo;
+    if (isNull(gbTo)) return '∞';
 
     return formatGigabytes(gbTo);
+  };
+
+  const getProgressPercentage = () => {
+    const gbToValue = isNull(gbTo) ? gbFrom : gbTo;
+
+    return getPercentage(gbFrom, gbToValue);
   };
 
   return (
     <div className={cl.wrapper}>
       <div className={cl.info}>
-        <Progress value={getPercentage(gbFrom, gbTo)} className={cl.progress} />
+        <Progress value={getProgressPercentage()} className={cl.progress} />
         <p className={cl.traffic}>
           <span>{formatGigabytes(gbFrom)}</span>
           <span>{getTotalGigabytes()}</span>

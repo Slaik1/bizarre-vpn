@@ -12,9 +12,7 @@ export const user = {
     return data;
   },
   ping: async () => {
-    const res = await http.get(
-      'https://bizarre-vpn-api.duckdns.org:8443' + '/ping'
-    );
+    const res = await http.get(`https://bizarre-vpn-api.duckdns.org:8443/ping`);
 
     return res.data;
   },

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { IoCopyOutline } from 'react-icons/io5';
 
 import { UserPlan } from '../../../ts/types/userPlan';
 import notify from '../../../utils/notify';
@@ -25,7 +26,12 @@ const UserPlanCard: FC<UserPlanCardProps> = ({ plan }) => {
     <CardContainer
       title={name}
       buttonHandler={buttonClickHandler}
-      buttonTitle={t('userPlanCard.actionButton')}
+      buttonTitle={
+        <>
+          {t('userPlanCard.actionButton')}
+          <IoCopyOutline />
+        </>
+      }
     >
       <UserPlanCardContent data={plan} />
     </CardContainer>

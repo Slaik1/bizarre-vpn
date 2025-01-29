@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { RefObject } from 'react';
 
-class LayoutStore {
+export class LayoutStore {
   mainRef: N<RefObject<HTMLElement>> = null;
 
   constructor() {
@@ -16,7 +16,3 @@ class LayoutStore {
     return this.mainRef !== null;
   }
 }
-
-const layoutStore = new LayoutStore();
-
-export default layoutStore;

@@ -12,21 +12,31 @@
 
 .navButton {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 33%;
-  color: white;
+  width: 100%;
+  color: var(--font-color);
   text-decoration: none;
 
-  svg {
+  .icon {
     color: var(--hint-color);
+    font-size: 24px;
+  }
+
+  .title {
+    color: var(--hint-color);
+    font-weight: 600;
   }
 
   &.active {
-    svg {
+    .icon {
       color: var(--link-color);
-      transition: color 0.4s ease;
+    }
+
+    .title {
+      color: var(--link-color);
     }
   }
 }

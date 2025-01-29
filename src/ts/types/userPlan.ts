@@ -4,7 +4,7 @@ export interface UserPlan {
   price: number;
   country: string;
   gbFrom: number;
-  gbTo: number;
+  gbTo: number | null;
   name: string;
   id: number;
   config: string;

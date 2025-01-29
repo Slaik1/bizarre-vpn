@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 
-import layoutStore from '../../../../stores/LayoutStore';
+import { rootStore } from '../../../../stores/RootStore';
 
 export const useAffixScroll = () => {
   const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!layoutStore.mainRef?.current) return;
-      const scrollTop = layoutStore.mainRef.current.scrollTop;
+      if (!rootStore.layoutStore.mainRef?.current) return;
+      const scrollTop = rootStore.layoutStore.mainRef.current.scrollTop;
 
       setIsShow(scrollTop > 0);
     };
 
-    if (!layoutStore.mainRef) return;
+    if (!rootStore.layoutStore.mainRef) return;
 
-    const element = layoutStore.mainRef.current;
+    const element = rootStore.layoutStore.mainRef.current;
 
     if (element) {
       element.addEventListener('scroll', handleScroll);
@@ -30,9 +30,9 @@ export const useAffixScroll = () => {
   }, []);
 
   const scrollTop = () => {
-    if (!layoutStore.mainRef?.current) return;
+    if (!rootStore.layoutStore.mainRef?.current) return;
 
-    layoutStore.mainRef.current.scrollTo({
+    rootStore.layoutStore.mainRef.current.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth',
