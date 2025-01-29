@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 import { User } from '../ts/types/user';
 
-class UserStore {
+export class UserStore {
   user: N<User> = null;
 
   constructor() {
@@ -13,7 +13,3 @@ class UserStore {
     this.user = user;
   }
 }
-
-const userStore = new UserStore();
-
-export default userStore;
