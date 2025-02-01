@@ -1,46 +1,45 @@
 // eslint-disable-next-line import/named
 import { NotificationProps } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { t } from 'i18next';
 
-type NotifyOptions = Omit<NotificationProps, 'title' | 'message' | 'color'>;
+type NotifyOptions = Omit<NotificationProps, 'title' | 'color'>;
 
 interface Notify {
-  success: (message: string, title?: string, options?: NotifyOptions) => void;
-  error: (message: string, title?: string, options?: NotifyOptions) => void;
-  info: (message: string, title?: string, options?: NotifyOptions) => void;
-  warning: (message: string, title?: string, options?: NotifyOptions) => void;
+  success: (title: string, options?: NotifyOptions) => void;
+  error: (title: string, options?: NotifyOptions) => void;
+  info: (title: string, options?: NotifyOptions) => void;
+  warning: (title: string, options?: NotifyOptions) => void;
 }
 
 const notify: Notify = {
-  success: (message, title = t('general.status.success'), options) =>
+  success: (title, options) =>
     showNotification({
       title,
-      message,
+      message: '',
       color: 'green',
       ...options,
     }),
 
-  error: (message, title = t('general.status.error'), options) =>
+  error: (title, options) =>
     showNotification({
       title,
-      message,
+      message: '',
       color: 'red',
       ...options,
     }),
 
-  info: (message, title = t('general.status.info'), options) =>
+  info: (title, options) =>
     showNotification({
       title,
-      message,
+      message: '',
       color: 'blue',
       ...options,
     }),
 
-  warning: (message, title = t('general.status.warning'), options) =>
+  warning: (title, options) =>
     showNotification({
       title,
-      message,
+      message: '',
       color: 'yellow',
       ...options,
     }),
