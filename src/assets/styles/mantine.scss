@@ -1,0 +1,48 @@
+/* stylelint-disable */
+:root {
+  .mantine-Progress-section {
+    background: var(--primary-color);
+  }
+
+  .mantine-Notifications-root {
+    top: 36px;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    overflow: auto;
+    pointer-events: none;
+
+    .mantine-Notifications-notification {
+      display: flex;
+      justify-content: center;
+      width: auto;
+      max-width: calc(100dvw - 180px);
+      background-color: var(--tg-theme-secondary-bg-color);
+      padding: 5.5px 12px;
+      border-radius: 15px;
+
+      &::before {
+        display: none;
+      }
+
+      .mantine-Notification-body {
+        margin: 0;
+
+        .mantine-Notification-description {
+          display: none;
+        }
+
+        .mantine-Notification-title {
+          color: var(--tg-theme-text-color);
+          font-size: 12px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+
+      .mantine-Notification-closeButton {
+        display: none;
+      }
+    }
+  }
+}

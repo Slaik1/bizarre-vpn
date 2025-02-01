@@ -37,19 +37,12 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
           },
         }),
       },
-      // Notification: {
-      //   styles: () => ({
-      //     root: {
-      //       maxWidth: 400,
-      //     },
-      //   }),
-      // },
     },
   };
 
   return (
     <MantineProvider theme={theme}>
-      <Notifications position="top-center" />
+      <Notifications position="top-center" limit={3} />
       {children}
     </MantineProvider>
   );

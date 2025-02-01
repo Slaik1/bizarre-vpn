@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IoCopyOutline } from 'react-icons/io5';
@@ -13,7 +14,7 @@ interface UserPlanCardProps {
 }
 
 const UserPlanCard: FC<UserPlanCardProps> = ({ plan }) => {
-  const { t } = useTranslation('home');
+  const { t: homeTranslation } = useTranslation('home');
   const { name, config } = plan;
 
   const buttonClickHandler = async () => {
@@ -28,7 +29,7 @@ const UserPlanCard: FC<UserPlanCardProps> = ({ plan }) => {
       buttonHandler={buttonClickHandler}
       buttonTitle={
         <>
-          {t('userPlanCard.actionButton')}
+          {homeTranslation('userPlanCard.actionButton')}
           <IoCopyOutline />
         </>
       }
