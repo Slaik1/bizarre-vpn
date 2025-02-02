@@ -1,0 +1,7 @@
+.usersContainer {
+  display: grid !important;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-height: calc(100dvh - 288px);
+  overflow-y: auto;
+}

@@ -1,0 +1,16 @@
+.user {
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+
+  .id {
+    margin-right: 10px;
+  }
+
+  .username {
+    margin-right: auto;
+  }
+}
