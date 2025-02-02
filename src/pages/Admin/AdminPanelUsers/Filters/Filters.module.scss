@@ -1,21 +1,23 @@
 .filters {
-  margin-bottom: 20px;
+  .filtersIcon {
+    cursor: pointer;
+  }
 
   .searchInput {
     margin-bottom: 20px;
   }
 
   .scrollFilersContainer {
-		display: flex;
-		overflow-x: auto;
+    display: flex;
+    overflow-x: auto;
     .roleSelect {
-			min-width: 100px;
+      min-width: 100px;
       max-width: 100px;
-			margin-right: 10px;
+      margin-right: 10px;
 
-			&:last-child {
-				margin-right: 0;
-			}
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

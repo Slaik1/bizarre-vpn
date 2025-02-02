@@ -1,5 +1,6 @@
 /* stylelint-disable */
 :root {
+  color: red !important;
   .mantine-Progress-section {
     background: var(--primary-color);
   }
@@ -44,5 +45,43 @@
         display: none;
       }
     }
+  }
+
+  //input
+  .mantine-Input-input {
+    background: var(--bg-color);
+    --input-bd-focus: var(--primary-color);
+    color: var(--text-color);
+    border-color: var(--hint-color);
+  }
+
+  //select
+  .mantine-Select-input {
+    &:focus {
+      --input-bd: var(--primary-color);
+    }
+  }
+
+  //pagination
+  .mantine-Pagination-control {
+    --pagination-active-bg: var(--primary-color);
+    background-color: var(--bg-tint);
+    color: var(--text-color);
+    border-color: var(--hint-color);
+  }
+  .mantine-Pagination-control:where([data-active]) {
+    background-color: var(--primary-color);
+    border: none;
+  }
+
+  //drawer
+  .mantine-Drawer-content {
+    background-color: var(--bg-color);
+  }
+  .mantine-Drawer-header {
+    background-color: var(--bg-color);
+  }
+  .mantine-Drawer-close:hover {
+    background: var(--hint-color);
   }
 }

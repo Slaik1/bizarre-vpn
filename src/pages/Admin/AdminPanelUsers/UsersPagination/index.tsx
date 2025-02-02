@@ -6,7 +6,7 @@ import cl from './UsersPagination.module.scss'
 const UsersPagination: FC = () => {
   return (
     <>
-      <Pagination total={20} className={cl.usersPagination}/>
+      <Pagination size={'sm'} total={20} className={cl.usersPagination}/>
     </>
   );
 };

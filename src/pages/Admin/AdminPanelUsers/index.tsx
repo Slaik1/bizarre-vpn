@@ -1,15 +1,19 @@
 import { FC } from 'react';
-import Users from './Users';
+
 import Filters from './Filters';
+import Users from './Users';
 import UsersPagination from './UsersPagination';
-import cl from './AdminPanelUsers.module.scss'
+
+import cl from './AdminPanelUsers.module.scss';
+
 const AdminPanelUsers: FC = () => {
   return (
     <div className={cl.adminPanelUsersContainer}>
-      <div>
+      <div className={cl.filtersWrapper}>
+        <h2>Пользователи</h2>
         <Filters />
-        <Users />
       </div>
+      <Users />
       <UsersPagination />
     </div>
   );

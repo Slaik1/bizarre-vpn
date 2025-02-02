@@ -19,12 +19,20 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   }, [rootStore.telegramStore.user]);
 
   return (
-    <div style={{ height: '100dvh', width: '100dvw' }}>
-      <main ref={mainRef} className={styles.section}>
-        {children}
-      </main>
-      <Navigation />
-    </div>
+    <Auth>
+      <div style={{ height: '100dvh', width: '100dvw' }}>
+        <main
+          ref={mainRef}
+          className={styles.section}
+          style={{
+            paddingTop: rootStore.userStore.device === 'phone' ? 75 : 16,
+          }}
+        >
+          {children}
+        </main>
+        <Navigation />
+      </div>
+    </Auth>
   );
 };
 
