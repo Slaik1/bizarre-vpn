@@ -10,9 +10,10 @@
   .scrollFilersContainer {
     display: flex;
     overflow-x: auto;
+
     .roleSelect {
-      min-width: 100px;
       max-width: 100px;
+      min-width: 100px;
       margin-right: 10px;
 
       &:last-child {

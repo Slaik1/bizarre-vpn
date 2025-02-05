@@ -13,7 +13,12 @@ const Filters: FC = () => {
   return (
     <div className={cl.filters}>
       <IoFilterOutline size={20} className={cl.filtersIcon} onClick={open} />
-      <Drawer opened={opened} onClose={close} position="bottom" title="Фильтры пользователей">
+      <Drawer
+        opened={opened}
+        onClose={close}
+        position="bottom"
+        title="Фильтры пользователей"
+      >
         <FiltersContent />
       </Drawer>
     </div>

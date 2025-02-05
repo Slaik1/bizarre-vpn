@@ -1,12 +1,12 @@
 import { Pagination } from '@mantine/core';
 import { FC } from 'react';
 
-import cl from './UsersPagination.module.scss'
+import cl from './UsersPagination.module.scss';
 
 const UsersPagination: FC = () => {
   return (
     <>
-      <Pagination size={'sm'} total={20} className={cl.usersPagination}/>
+      <Pagination size={'sm'} total={20} className={cl.usersPagination} />
     </>
   );
 };

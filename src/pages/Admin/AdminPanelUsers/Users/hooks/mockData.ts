@@ -1,4 +1,4 @@
-import { User } from "../../../../../ts/types/user";
+import { User } from '../../../../../ts/types/user';
 
 export const MOCK_USERS: User[] = [
   {
