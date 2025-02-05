@@ -1,7 +1,9 @@
+export type UserRole = 'basic' | 'admin';
+
 export type User = {
   id: number;
-  isBot: boolean;
-  languageCode: string;
-  telegramId: number;
   username: string;
+  role: UserRole;
+  createdAt: string;
+  updatedAt: string;
 };
