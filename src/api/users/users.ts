@@ -4,16 +4,11 @@ import { http } from '../http';
 const ENDPOINT = 'user';
 
 export const user = {
-  auth: async () => {
-    const res = await http.post(ENDPOINT + '/auth');
+  getUsers: async () => {
+    const res = await http.post(ENDPOINT);
 
     const data: User = res.data;
 
     return data;
-  },
-  ping: async () => {
-    const res = await http.get(`https://bizarre-vpn-api.duckdns.org:8443/ping`);
-
-    return res.data;
   },
 };
