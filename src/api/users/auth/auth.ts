@@ -2,19 +2,13 @@ import { http } from '../../http';
 
 const ENDPOINT = 'users/auth';
 
-interface Tokens {
-  message: string;
-  tokens: {
-    accessToken: string;
-    refreshToken: string;
-  };
-}
-
 export const auth = {
-  postRefreshTokens: async (refreshToken: string) => {
-    const res = await http.post(ENDPOINT + '/refresh-tokens', { refreshToken });
+  postRefreshToken: async () => {
+    const res = await http.post(ENDPOINT + '/refresh-tokens', null, {
+      withCredentials: true,
+    });
 
-    const data: Tokens = res.data;
+    const data = res.data.accessToken;
 
     return data;
   },
@@ -23,7 +17,7 @@ export const auth = {
       initDataStr,
     });
 
-    const data: Tokens = res.data;
+    const data = res.data.accessToken;
 
     return data;
   },
