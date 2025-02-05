@@ -1,3 +1,4 @@
+import { rootStore } from '../../../stores/RootStore';
 import { http } from '../../http';
 
 const ENDPOINT = 'users/auth';
@@ -12,9 +13,9 @@ export const auth = {
 
     return data;
   },
-  postTelegramInitData: async (initDataStr: string) => {
+  postTelegramInitData: async () => {
     const res = await http.post(ENDPOINT + '/telegram-init-data', {
-      initDataStr,
+      initDataStr: rootStore.telegramStore.tg.initData,
     });
 
     const data = res.data.accessToken;

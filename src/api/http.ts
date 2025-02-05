@@ -4,7 +4,6 @@ import type { AxiosRequestConfig, AxiosError } from 'axios';
 
 import { CONFIG } from '../constants/config';
 import { rootStore } from '../stores/RootStore';
-import notify from '../utils/notify';
 
 import api from '.';
 
@@ -49,8 +48,7 @@ http.interceptors.response.use(
 
         return http.request(originalRequest);
       } catch (e) {
-        notify.error('Перезайдите в приложение');
-        rootStore.userStore.resetUserData();
+        window.location.href = '/login';
       }
     }
     throw error;

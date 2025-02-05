@@ -7,7 +7,7 @@ const ENDPOINT = 'users';
 
 export const user = {
   auth,
-  getUsers: async () => {
+  getUserSelf: async () => {
     const res = await http.get(ENDPOINT);
 
     const data: User = res.data;

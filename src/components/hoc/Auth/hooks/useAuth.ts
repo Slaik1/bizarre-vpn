@@ -5,28 +5,27 @@ import tryCatchWrapper from '../../../../helpers/tryCatchWrapper';
 import { rootStore } from '../../../../stores/RootStore';
 
 export const useAuth = () => {
-  const [isUserExist, setIsUserExist] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const checkAuth = () => {
-    tryCatchWrapper(
-      async () => {
-        const data = await api.user.auth();
+  const checkAuth = tryCatchWrapper(
+    async () => {
+      const accessToken = await api.user.auth.postRefreshToken();
 
-        rootStore.userStore.setUser(data);
+      rootStore.userStore.setAccessToken(accessToken)
 
-        setIsUserExist(true);
-      },
-      {
-        onLoadStart: () => setIsLoading(true),
-        onLoadEnd: () => setIsLoading(false),
-      }
-    )();
-  };
+      const user = await api.user.getUserSelf();
+
+      rootStore.userStore.setUser(user);
+    },
+    {
+      onLoadStart: () => setIsLoading(true),
+      onLoadEnd: () => setIsLoading(false),
+    }
+  );
 
   useEffect(() => {
     checkAuth();
   }, []);
 
-  return { isLoading, isUserExist };
+  return { isLoading };
 };
