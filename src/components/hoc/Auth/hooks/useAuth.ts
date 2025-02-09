@@ -11,15 +11,20 @@ export const useAuth = () => {
     async () => {
       const accessToken = await api.user.auth.postRefreshToken();
 
-      rootStore.userStore.setAccessToken(accessToken)
+      rootStore.userStore.setAccessToken(accessToken);
 
       const user = await api.user.getUserSelf();
 
       rootStore.userStore.setUser(user);
     },
     {
-      onLoadStart: () => setIsLoading(true),
-      onLoadEnd: () => setIsLoading(false),
+      setIsLoading: setIsLoading,
+      errorHandler: async (e) => {
+        console.log('e', e);
+        const accessToken = await api.user.auth.postTelegramInitData();
+
+        rootStore.userStore.setAccessToken(accessToken);
+      },
     }
   );
 

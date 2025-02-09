@@ -1,15 +1,21 @@
 import axios, { isAxiosError } from 'axios';
 // eslint-disable-next-line no-duplicate-imports
-import type { AxiosRequestConfig, AxiosError } from 'axios';
+import type { AxiosRequestConfig, AxiosError, AxiosRequestHeaders } from 'axios';
 
 import { CONFIG } from '../constants/config';
 import { rootStore } from '../stores/RootStore';
 
 import api from '.';
 
+const HEADERS: AxiosRequestHeaders = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+};
+
 const requestSettings: AxiosRequestConfig = {
   baseURL: CONFIG.baseUrl,
   withCredentials: true,
+  headers: HEADERS
 };
 
 export const isAxiosErrorGuard = (e: unknown): e is AxiosError =>

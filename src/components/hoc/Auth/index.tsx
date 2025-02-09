@@ -16,6 +16,7 @@ const Auth: FC<AuthProps> = ({ children }) => {
   if (isLoading) return <Preloader />;
 
   if (rootStore.userStore.isAuth) return children;
+
 };
 
 export default observer(Auth);
