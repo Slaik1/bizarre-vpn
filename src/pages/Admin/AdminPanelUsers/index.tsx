@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import Filters from './Filters';
 import Users from './Users';
-import UsersPagination from './UsersPagination';
 
 import cl from './AdminPanelUsers.module.scss';
 
@@ -14,7 +13,6 @@ const AdminPanelUsers: FC = () => {
         <Filters />
       </div>
       <Users />
-      <UsersPagination />
     </div>
   );
 };
