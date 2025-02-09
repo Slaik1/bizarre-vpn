@@ -2,6 +2,7 @@ import { FALLBACK_LANGUAGE } from '../constants/user';
 import notify from '../utils/notify';
 
 export class TelegramStore {
+  //@ts-ignore
   public tg = window.Telegram.WebApp;
   public user = this.tg.initDataUnsafe?.user;
 

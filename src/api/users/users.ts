@@ -21,4 +21,11 @@ export const user = {
 
     return data;
   },
+  ping: async () => {
+    const res = await http.get('ping');
+
+    const data: User[] = res.data;
+
+    return data;
+  },
 };

@@ -1,3 +1,3 @@
 export const CONFIG = {
-  baseUrl: 'https://bizarre-pleasure.duckdns.org:8443/',
+  baseUrl: 'https://naughty-vpn-api.duckdns.org/api/',
 };

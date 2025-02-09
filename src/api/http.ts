@@ -6,15 +6,14 @@ import { CONFIG } from '../constants/config';
 import { rootStore } from '../stores/RootStore';
 
 import api from '.';
-
+//@ts-ignore
 const HEADERS: AxiosRequestHeaders = {
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': '*',
+  // 'Content-Type': 'application/json',
+  // 'Access-Control-Allow-Origin': '*',
 };
 
 const requestSettings: AxiosRequestConfig = {
   baseURL: CONFIG.baseUrl,
-  withCredentials: true,
   headers: HEADERS
 };
 
