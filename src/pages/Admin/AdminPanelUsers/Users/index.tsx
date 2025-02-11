@@ -1,4 +1,4 @@
-import { Modal } from '@mantine/core';
+import { Drawer } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { FC, useState } from 'react';
 
@@ -6,6 +6,7 @@ import User from '../../../../components/Admin/User';
 import { User as UserType } from '../../../../ts/types/user';
 
 import { useFetchUsers } from './hooks/useFetchUsers';
+import UserDrawerContent from './UserDrawerContent';
 
 import cl from './Users.module.scss';
 
@@ -24,7 +25,15 @@ const Users: FC = () => {
           key={el.id}
         />
       ))}
-      <Modal opened={opened} onClose={close} title={currentUser?.username} />
+      <Drawer
+        size={'lg'}
+        position="bottom"
+        opened={opened}
+        onClose={close}
+        title={'Пользователь ' + currentUser?.username}
+      >
+        <UserDrawerContent user={currentUser} />
+      </Drawer>
     </div>
   );
 };
