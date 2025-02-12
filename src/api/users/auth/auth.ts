@@ -5,7 +5,7 @@ const ENDPOINT = 'users/auth';
 
 export const auth = {
   postRefreshToken: async () => {
-    const res = await http.post(ENDPOINT + '/refresh-tokens', null, {
+    const res = await http.post(ENDPOINT + '/refresh-tokens', {}, {
       withCredentials: true,
     });
 
@@ -14,9 +14,13 @@ export const auth = {
     return data;
   },
   postTelegramInitData: async () => {
-    const res = await http.post(ENDPOINT + '/telegram-init-data', {
-      initDataStr: rootStore.telegramStore.tg.initData,
-    });
+    const res = await http.post(
+      ENDPOINT + '/telegram-init-data',
+      {
+        initDataStr: rootStore.telegramStore.tg.initData,
+      },
+      { withCredentials: true }
+    );
 
     const data = res.data.accessToken;
 

@@ -1,11 +1,16 @@
 import axios, { isAxiosError } from 'axios';
 // eslint-disable-next-line no-duplicate-imports
-import type { AxiosRequestConfig, AxiosError, AxiosRequestHeaders } from 'axios';
+import type {
+  AxiosRequestConfig,
+  AxiosError,
+  AxiosRequestHeaders,
+} from 'axios';
 
 import { CONFIG } from '../constants/config';
 import { rootStore } from '../stores/RootStore';
 
 import api from '.';
+import { Navigate } from 'react-router-dom';
 //@ts-ignore
 const HEADERS: AxiosRequestHeaders = {
   // 'Content-Type': 'application/json',
@@ -14,7 +19,7 @@ const HEADERS: AxiosRequestHeaders = {
 
 const requestSettings: AxiosRequestConfig = {
   baseURL: CONFIG.baseUrl,
-  headers: HEADERS
+  headers: HEADERS,
 };
 
 export const isAxiosErrorGuard = (e: unknown): e is AxiosError =>
@@ -45,15 +50,15 @@ http.interceptors.response.use(
       originalRequest._isRetry = true;
 
       try {
-        const tokens = await api.user.auth.postRefreshToken();
+        const token = await api.user.auth.postRefreshToken();
 
-        if (!tokens) throw new Error('Запрос не вернул токены');
+        if (!token) throw new Error('Запрос не вернул токен');
 
-        rootStore.userStore.setAccessToken(tokens.accessToken);
+        rootStore.userStore.setAccessToken(token);
 
-        return http.request(originalRequest);
+        return await http.request(originalRequest);
       } catch (e) {
-        window.location.href = '/login';
+        Navigate({ to: 'login' });
       }
     }
     throw error;

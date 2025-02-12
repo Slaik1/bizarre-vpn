@@ -6,15 +6,18 @@ import tryCatchWrapper from '../../helpers/tryCatchWrapper';
 import { rootStore } from '../../stores/RootStore';
 import notify from '../../utils/notify';
 import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const updateTokens = tryCatchWrapper(
     async () => {
-      const accessToken = await api.user.auth.postTelegramInitData();
+      const token = await api.user.auth.postTelegramInitData();
 
-      rootStore.userStore.setAccessToken(accessToken);
+      rootStore.userStore.setAccessToken(token)
+      navigate('/');
     },
     {
       setIsLoading: setIsLoading,
