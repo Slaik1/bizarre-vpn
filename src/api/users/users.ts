@@ -1,19 +1,31 @@
 import { User } from '../../ts/types/user';
 import { http } from '../http';
 
-const ENDPOINT = 'user';
+import { auth } from './auth/auth';
+
+const ENDPOINT = 'users';
 
 export const user = {
-  auth: async () => {
-    const res = await http.post(ENDPOINT + '/auth');
+  auth,
+  getUserSelf: async () => {
+    const res = await http.get(ENDPOINT);
 
     const data: User = res.data;
 
     return data;
   },
-  ping: async () => {
-    const res = await http.get(`https://bizarre-vpn-api.duckdns.org:8443/ping`);
+  getUsersList: async () => {
+    const res = await http.get(ENDPOINT + '/list');
 
-    return res.data;
+    const data: User[] = res.data;
+
+    return data;
+  },
+  ping: async () => {
+    const res = await http.get('ping');
+
+    const data: User[] = res.data;
+
+    return data;
   },
 };

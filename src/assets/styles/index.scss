@@ -28,4 +28,17 @@ p {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--secondary-bg-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--hint-color);
+    border-radius: 5px;
+  }
 }

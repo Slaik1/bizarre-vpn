@@ -2,13 +2,12 @@ import { observer } from 'mobx-react-lite';
 import { FC, ReactNode, useEffect, useRef } from 'react';
 
 import { rootStore } from '../../stores/RootStore';
-import Auth from '../hoc/Auth';
 import Navigation from '../Navigation';
 
 import styles from './Layout.module.scss';
 
 interface LayoutProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
@@ -20,14 +19,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   }, [rootStore.telegramStore.user]);
 
   return (
-    <Auth>
-      <div style={{ height: '100dvh', width: '100dvw' }}>
-        <main ref={mainRef} className={styles.section}>
-          {children}
-        </main>
-        <Navigation />
-      </div>
-    </Auth>
+    <div style={{ height: '100dvh', width: '100dvw' }}>
+      <main ref={mainRef} className={styles.section}>
+        {children}
+      </main>
+      <Navigation />
+    </div>
   );
 };
 
