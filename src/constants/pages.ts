@@ -1,8 +1,12 @@
 export enum Pages {
-  Home = '/',
+  Home = '/home',
   Store = '/store',
   Help = '/help',
   Login = '/login',
 }
 
-export type PagesType = typeof Pages[keyof typeof Pages];
+export const PAGES_ROUTES: string[] = Object.values(Pages).map((route) =>
+  route.slice(1)
+);
+
+export type PagesType = (typeof Pages)[keyof typeof Pages];
