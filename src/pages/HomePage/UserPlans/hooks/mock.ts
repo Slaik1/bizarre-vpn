@@ -8,7 +8,7 @@ export const MOCK_USER_PLANS = [
     gbTo: null,
     name: 'Basic',
     id: 1,
-    config: 'config1'
+    config: 'config1',
   },
   {
     duration: 60,
@@ -19,7 +19,7 @@ export const MOCK_USER_PLANS = [
     gbTo: 512,
     name: 'Pro',
     id: 2,
-    config: 'config2'
+    config: 'config2',
   },
   {
     duration: 90,
@@ -30,7 +30,7 @@ export const MOCK_USER_PLANS = [
     gbTo: 1024,
     name: 'Premium',
     id: 3,
-    config: 'config3'
+    config: 'config3',
   },
   {
     duration: 14,
@@ -41,7 +41,7 @@ export const MOCK_USER_PLANS = [
     gbTo: 64,
     name: 'Starter',
     id: 4,
-    config: 'config4'
+    config: 'config4',
   },
   {
     duration: 365,
@@ -52,7 +52,7 @@ export const MOCK_USER_PLANS = [
     gbTo: 2048,
     name: 'Enterprise',
     id: 5,
-    config: 'config5'
+    config: 'config5',
   },
   {
     duration: 30,
@@ -63,6 +63,6 @@ export const MOCK_USER_PLANS = [
     gbTo: 256,
     name: 'Student',
     id: 6,
-    config: 'config6'
+    config: 'config6',
   },
 ];

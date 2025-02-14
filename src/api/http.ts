@@ -5,13 +5,13 @@ import type {
   AxiosError,
   AxiosRequestHeaders,
 } from 'axios';
+import { Navigate } from 'react-router-dom';
 
 import { CONFIG } from '../constants/config';
+import { Pages } from '../constants/pages';
 import { rootStore } from '../stores/RootStore';
 
 import api from '.';
-import { Navigate } from 'react-router-dom';
-import { Pages } from '../constants/pages';
 //@ts-ignore
 const HEADERS: AxiosRequestHeaders = {
   // 'Content-Type': 'application/json',
