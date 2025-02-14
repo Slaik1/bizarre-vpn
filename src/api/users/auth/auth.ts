@@ -5,7 +5,7 @@ const ENDPOINT = 'users/auth';
 
 export const auth = {
   postRefreshToken: async () => {
-    const res = await http.post(ENDPOINT + '/refresh-tokens', {}, {
+    const res = await http.post(ENDPOINT + '/refresh-tokens', null, {
       withCredentials: true,
     });
 
