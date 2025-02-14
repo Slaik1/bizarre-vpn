@@ -12,7 +12,6 @@ export const useFetchUserPlans = () => {
 
   const fetchPlans = tryCatchWrapper(
     async () => {
-      //@ts-ignore
       setUserPlans(MOCK_USER_PLANS);
     },
     {

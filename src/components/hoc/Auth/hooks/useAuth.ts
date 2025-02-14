@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import api from '../../../../api';
+import { Pages } from '../../../../constants/pages';
 import tryCatchWrapper from '../../../../helpers/tryCatchWrapper';
 import { rootStore } from '../../../../stores/RootStore';
 
@@ -25,7 +26,7 @@ export const useAuth = () => {
     },
     {
       setIsLoading: setIsLoading,
-      errorHandler: () => navigate('login'),
+      errorHandler: () => navigate(Pages.Login),
     }
   );
 

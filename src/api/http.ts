@@ -11,6 +11,7 @@ import { rootStore } from '../stores/RootStore';
 
 import api from '.';
 import { Navigate } from 'react-router-dom';
+import { Pages } from '../constants/pages';
 //@ts-ignore
 const HEADERS: AxiosRequestHeaders = {
   // 'Content-Type': 'application/json',
@@ -58,7 +59,7 @@ http.interceptors.response.use(
 
         return await http.request(originalRequest);
       } catch (e) {
-        Navigate({ to: 'login' });
+        Navigate({ to: Pages.Login });
       }
     }
     throw error;

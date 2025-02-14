@@ -5,6 +5,8 @@ export class TelegramStore {
   //@ts-ignore
   public tg = window.Telegram.WebApp;
   public user = this.tg.initDataUnsafe?.user;
+  public isTelegramWebApp =
+    typeof this.tg !== undefined && Boolean(this.tg.initData);
 
   public setAppReady = () => {
     this.tg.ready();

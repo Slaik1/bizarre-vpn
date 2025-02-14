@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IoCopyOutline } from 'react-icons/io5';
 
@@ -17,7 +17,9 @@ const UserPlanCard: FC<UserPlanCardProps> = ({ plan }) => {
   const { t: homeTranslation } = useTranslation('home');
   const { name, config } = plan;
 
-  const buttonClickHandler = async () => {
+  const buttonClickHandler = async (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
     await navigator.clipboard.writeText(config);
 
     notify.success(t('general.copy.info'));
