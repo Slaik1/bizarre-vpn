@@ -6,11 +6,11 @@ import Preloader from '../../Preloader';
 
 import { useAuth } from './hooks/useAuth';
 
-interface AuthProps {
+interface AuthGuardProps {
   children: ReactNode;
 }
 
-const Auth: FC<AuthProps> = ({ children }) => {
+const AuthGuard: FC<AuthGuardProps> = ({ children }) => {
   const { isLoading } = useAuth();
 
   if (isLoading) return <Preloader />;
@@ -20,4 +20,4 @@ const Auth: FC<AuthProps> = ({ children }) => {
   return null;
 };
 
-export default observer(Auth);
+export default observer(AuthGuard);

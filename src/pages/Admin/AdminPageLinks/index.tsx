@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import cl from './AdminPanelLinksPage.module.scss';
+import cl from './AdminPageLinks.module.scss';
 
-const AdminPanelPageLinks: FC = () => {
+const AdminPageLinks: FC = () => {
   return (
     <div className={cl.adminPageLinks}>
       <NavLink className={cl.link} to={'/admin/users'}>
@@ -19,4 +19,4 @@ const AdminPanelPageLinks: FC = () => {
   );
 };
 
-export default AdminPanelPageLinks;
+export default AdminPageLinks;

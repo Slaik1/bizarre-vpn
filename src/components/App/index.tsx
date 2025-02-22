@@ -7,7 +7,9 @@ import ThemeProvider from '../ThemeProvider';
 import { useInitApp } from './hooks/useInitApp';
 
 const App: FC = () => {
-  useInitApp();
+  const isLoading = useInitApp();
+
+  if (isLoading) return null;
 
   return (
     <ThemeProvider>

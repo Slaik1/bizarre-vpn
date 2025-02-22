@@ -3,9 +3,9 @@ import { FC } from 'react';
 import Filters from './Filters';
 import Users from './Users';
 
-import cl from './AdminPanelUsers.module.scss';
+import cl from './AdminPageUsers.module.scss';
 
-const AdminPanelUsers: FC = () => {
+const AdminPageUsers: FC = () => {
   return (
     <div className={cl.adminPanelUsersContainer}>
       <div className={cl.filtersWrapper}>
@@ -17,4 +17,4 @@ const AdminPanelUsers: FC = () => {
   );
 };
 
-export default AdminPanelUsers;
+export default AdminPageUsers;
