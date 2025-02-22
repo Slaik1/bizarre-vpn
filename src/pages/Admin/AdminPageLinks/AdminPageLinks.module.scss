@@ -1,0 +1,17 @@
+.adminPageLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+
+  .link {
+    width: 100%;
+    color: var(--link-color);
+    background: var(--bg-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+}

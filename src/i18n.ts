@@ -21,7 +21,7 @@ i18n
   .init({
     load: 'currentOnly',
     supportedLngs: ['en', 'ru'],
-    ns: ['common', 'errors', 'store', 'home'],
+    ns: ['common', 'store', 'home', 'login', 'notify'],
     defaultNS: ['common', 'notify'],
     interpolation: {
       escapeValue: false,

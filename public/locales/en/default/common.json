@@ -7,5 +7,14 @@
     "terabytes": "TB",
     "petabytes": "PB"
   },
+  "navigation": {
+    "home": "Home",
+    "store": "Store",
+    "help": "Help",
+    "adminLinks": "Admin",
+    "adminUsers":"Users",
+    "adminPlans":"Plans",
+    "adminServers":"Servers"
+  },
   "currency": "₽"
 }

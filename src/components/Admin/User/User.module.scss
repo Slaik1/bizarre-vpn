@@ -1,0 +1,17 @@
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--bg-color);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  .id {
+    margin-right: 10px;
+  }
+
+  .username {
+    margin-right: auto;
+  }
+}

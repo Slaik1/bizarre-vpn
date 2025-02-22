@@ -1,30 +1,27 @@
-import classNames from 'classnames';
-import { FC, useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { t } from 'i18next';
+import { observer } from 'mobx-react-lite';
+import { FC } from 'react';
 
-import { getNavLinks } from './helpers';
+import { rootStore } from '../../stores/RootStore';
+
+import { ADMIN_NAV_LINKS, SYSTEM_NAV_LINKS } from './constants';
+import LinkContent from './LinkContent';
 
 import cl from './Navigation.module.scss';
 
 const Navigation: FC = () => {
-  const links = useMemo(() => getNavLinks(), []);
-
   return (
     <nav className={cl.nav}>
-      {links.map(({ icon: Icon, route, title }) => (
-        <NavLink
-          to={route}
-          key={route}
-          className={({ isActive }) =>
-            classNames(cl.navButton, { [cl.active]: isActive })
-          }
-        >
-          <Icon className={cl.icon} />
-          <p className={cl.title}>{title}</p>
-        </NavLink>
+      {SYSTEM_NAV_LINKS.map(({ icon: Icon, route, titleKey }, i) => (
+        <LinkContent Icon={Icon} title={t(titleKey)} to={route} key={i} />
       ))}
+
+      {rootStore.userStore.user?.role === 'basic' &&
+        ADMIN_NAV_LINKS.map(({ icon: Icon, route, titleKey }, i) => (
+          <LinkContent Icon={Icon} title={t(titleKey)} to={route} key={i} />
+        ))}
     </nav>
   );
 };
 
-export default Navigation;
+export default observer(Navigation);
