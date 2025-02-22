@@ -1,4 +1,5 @@
 import { t } from 'i18next';
+import { observer } from 'mobx-react-lite';
 import { FC } from 'react';
 
 import { rootStore } from '../../stores/RootStore';
@@ -15,7 +16,7 @@ const Navigation: FC = () => {
         <LinkContent Icon={Icon} title={t(titleKey)} to={route} key={i} />
       ))}
 
-      {rootStore.userStore.user?.role === 'admin' &&
+      {rootStore.userStore.user?.role === 'basic' &&
         ADMIN_NAV_LINKS.map(({ icon: Icon, route, titleKey }, i) => (
           <LinkContent Icon={Icon} title={t(titleKey)} to={route} key={i} />
         ))}
@@ -23,4 +24,4 @@ const Navigation: FC = () => {
   );
 };
 
-export default Navigation;
+export default observer(Navigation);

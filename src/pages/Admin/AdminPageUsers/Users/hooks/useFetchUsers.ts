@@ -24,6 +24,7 @@ export const useFetchUsers = () => {
 
   useEffect(() => {
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { users, isLoading };

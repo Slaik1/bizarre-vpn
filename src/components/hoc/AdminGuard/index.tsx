@@ -1,6 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import { FC, ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { Pages } from '../../../constants/pages';
 import { rootStore } from '../../../stores/RootStore';
 
 interface AdminGuardProps {
@@ -8,7 +10,11 @@ interface AdminGuardProps {
 }
 
 const AdminGuard: FC<AdminGuardProps> = ({ children }) => {
-  if (rootStore.userStore.user?.role === 'admin') return children;
+  const navigate = useNavigate();
+
+  if (rootStore.userStore.user?.role === 'basic') return children;
+
+  navigate(Pages.Home);
 
   return null;
 };
